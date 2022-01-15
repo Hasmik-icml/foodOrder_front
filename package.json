@@ -1,0 +1,25 @@
+{
+  "name": "pizzeria-order",
+  "version": "1.0.0",
+  "description": "food order app",
+  "main": "index.js",
+  "repository": "https://github.com/Hasmik-icml/foodOrder_front.git",
+  "author": "Hasmik-icml <gevorgyan.icml@gmail.com>",
+  "license": "MIT",
+
+   "scripts": {
+   "build": "webpack",
+   "dev-server": "webpack-dev-server"
+ },
+
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.66.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3"
+  }
+}
