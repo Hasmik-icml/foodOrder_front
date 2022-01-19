@@ -1,0 +1,39 @@
+body{
+    background-image:url("../img/reg.jpg") ;
+    background-repeat: no-repeat; 
+     background-size: cover ;
+}
+
+.container{
+ display: flex; 
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ margin-top: 150px;
+ gap: 50px;
+}
+.comfirm-btn{
+    width: 150px;
+    height:35px;
+    border-radius: 50px;
+    background-image: linear-gradient(rgb(79, 121, 52), rgb(157, 231, 104));
+    color: rgb(255, 255, 255);
+    border:none;
+    font-size: 20px;
+}
+.table-name{
+   width: 250px;
+    border-radius: 50px;
+    height: 50px;
+    margin-top: 250;
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    background-image: linear-gradient(rgb(236, 156, 6), yellow);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-align: center;
+
+    }
+ 
+.table-name option {
+color :rgb(10, 10, 10);
+}
