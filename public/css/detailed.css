@@ -1,0 +1,124 @@
+body {
+  background-image: url("../img/genmen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 700px;
+  align-items: center;
+  gap: 50px;
+}
+
+.product {
+  background-color: #e4b86d;
+  width: 300px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  border-top-left-radius: 30px;
+  clip-path: polygon(0% 5%,
+      /* top left */
+      5% 0%,
+      /* top left */
+      85% 0%,
+      /* top right */
+      100% 15%,
+      /* top right */
+      100% 95%,
+      /* bottom right */
+      100% 100%,
+      /* bottom right */
+      0% 100%,
+      /* bottom left */
+      0% 100%
+      /* bottom left */
+    );
+}
+
+.productImg img {
+  height: 150px;
+  margin-top: 20px;
+}
+
+.productName {
+  text-align: center;
+}
+
+.productName h2 {
+  margin: 0;
+}
+
+.product h2 {
+  margin: 0;
+  margin-top: 10px;
+}
+
+.product label {
+  font-size: x-large;
+}
+
+.ingredientsList li {
+  font-size: x-large;
+}
+
+.productName {
+  margin-top: 10px;
+  padding: 10px;
+  border-top: 1px solid rgb(4, 2, 2);
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.ingredientsList {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.filter {
+  width: 120px;
+  height: 40px;
+  color: wheat;
+  background-color: black;
+  text-align: center;
+  font-size: x-large;
+  line-height: 40px;
+}
+
+/* .hidden{
+  display: none;
+} */
+.filterWindow {
+  background-image: url("../img/blackFon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 250px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.filterItem li {
+  font-style: oblique;
+  font-size: x-large;
+  color: wheat;
+}
+
+.filterClose {
+  color: wheat;
+  font-family: cursive;
+  display: inline-block;
+  margin: 0;
+  margin-left: 50px;
+}
+
+.filterInputBlock {
+  display: flex;
+  justify-content: center;
+}
