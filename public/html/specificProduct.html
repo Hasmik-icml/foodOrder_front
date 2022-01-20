@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product menu</title>
+    <link rel="stylesheet" href="../css/specificProduct.css">
+</head>
+<body>
+
+    <div class="grid-container">
+        <div class="item1">
+            <h3>Պեպպերոնի</h3>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+                <div class="dropdown-content">
+                    <a href="registr.html" ><img src="../img/tableIcon.png" alt="icon"> 1 </a><br>
+                    <a href="registr.html" ><img src="../img/basketIcon.png" alt="icon"> Զամբյուղ</a><br>
+                    <a href="registr.html" ><img src="../img/cancelIcon.jpg" alt="icon">Չեղարկել</a><br>
+                </div>
+            </div>
+        </div>
+        <div class="item2">
+            <div class="pizza-img">
+                <img src="../img/pepperoniPizza.png" alt="pepperoniPizza">
+            </div>
+            <div class="price">
+                <label>Գին՝</label>
+                <label class="productPrice">֏350</label>
+            </div>
+        </div>
+        <div class="item3">
+            <div class="ingredientsOfProduct">
+            <h4>Բաղադրություն</h4>
+            <input type="radio" id="ingredient1" name="ingredient1" value="cheese">
+            <label for="ingredient1"> Պանիր </label><br>
+            <input type="radio" id="ingredient2" name="ingredient2" value="pepperoni">
+            <label for="ingredient2"> Երշիկ </label><br>
+            <input type="radio" id="ingredient3" name="ingredient3" value="tomato">
+            <label for="ingredient3"> Լոլիկ </label>
+            </div>
+            <div class="numberOfProduct">
+                <h4>Քանակ</h4>
+                 <label>Կտոր</label>
+                <input type="number" class="quantity" name="quantity" min="1" max="16"><br>
+            </div>
+            <button class="addToBasket">Ավելացնել զամբյուղ</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
