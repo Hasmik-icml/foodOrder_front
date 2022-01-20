@@ -27,8 +27,7 @@ body {
     width: 250px;
     border-radius: 50px;
     height: 50px;
-    margin-top: 250;
-    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    margin-top: 250px;
     background-image: linear-gradient(rgb(236, 156, 6), yellow);
     color: rgb(255, 255, 255);
     font-size: 20px;
