@@ -6,7 +6,6 @@ document.querySelectorAll(".grid-item").forEach(function(item){
   item.addEventListener("click", function(){
     console.log("hi");
     renderDetailedPage();
-
   })
 })
 }
