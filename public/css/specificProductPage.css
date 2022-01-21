@@ -1,7 +1,20 @@
-body{
+html, body {
+    margin:0;
+    height:100vh;
+}
+.container {
+    background:red;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+#mainContainer{
     background-image:url("../img/genmen.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 .grid-container {
     display: grid;
@@ -31,21 +44,31 @@ body{
     padding:2px;
 
  }
+.numberOfProduct{
+    display:flex;
+    flex-direction: column;
+}
 .numberOfProduct h4{
     margin: 10px;
+    text-align: justify;
 }
 .quantityOfProduct{
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
 
+}
+.totalPriceDiv{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .quantityOfProduct label{
     margin-right: 10px;
 }
 
-.quantity{
+#quantity{
     text-align: center;
     width: 67px;
     height: 45px;
@@ -53,13 +76,14 @@ body{
     background-color: white;
     border:1px solid grey;
 }
-.add{
+
+#add{
     border-left: none;
 }
-.subtract{
+#subtract{
     border-right: none;
 }
-.add, .subtract {
+#add, #subtract {
     background-color: white;
     border:1px solid grey;
     height: 45px;
@@ -67,6 +91,16 @@ body{
     text-align: center;
     font-size: 28px;
 }
+
+#totalPrice{
+    font-size: 25px;
+    height: 45px;
+    width:100px;
+    padding:0;
+    margin:5px;
+    text-align: center;
+}
+
 .addToBasket{
     height: 50px;
     width: 170px;
