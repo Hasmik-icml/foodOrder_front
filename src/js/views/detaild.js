@@ -1,8 +1,8 @@
 const renderDetailedPage = () => {
-  document.querySelector(".container").innerHTML = `  <div class="container">
+  document.querySelector(".container").innerHTML = ` <div class="containerMainDetaild">  <div class="containerDetaild">
     <div class="product">
       <div class="productImg">
-        <img src="../../img/cheesePizza.png" alt="cheesePizza">
+        <img src="../img/cheesePizza.png" alt="cheesePizza">
       </div>
       <div class="productName">
         <h2 class="detailedProductName">Cheese Pizza</h2>
@@ -19,7 +19,7 @@ const renderDetailedPage = () => {
 
   <div class="product">
     <div class="productImg">
-      <img src="../../img/pepperoniPizza.png" alt="cheesePizza">
+      <img src="../img/pepperoniPizza.png" alt="cheesePizza">
     </div>
     <div class="productName">
       <h2 class="detailedProductName">Pepperoni Pizza</h2>
@@ -37,7 +37,7 @@ const renderDetailedPage = () => {
 
  <div class="product">
     <div class="productImg">
-      <img src="../../img/cheeseTomatoPizza.png" alt="cheesePizza">
+      <img src="../img/cheeseTomatoPizza.png" alt="cheesePizza">
     </div>
     <div class="productName">
       <h2 class="detailedProductName">CheeseTomato Pizza</h2>
@@ -74,7 +74,7 @@ const renderDetailedPage = () => {
           </ul>
         </div>
         <!-- end filter window -->
-</div>`;
+</div></div>`
 
 };
 export {
