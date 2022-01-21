@@ -1,5 +1,5 @@
 body {
-    background-image: url("public/img/img/reg.jpg");
+    background-image: url("/img/reg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -13,7 +13,7 @@ body {
     gap: 50px;
 }
 
-.comfirm-btn {
+.confirm-btn {
     width: 150px;
     height: 35px;
     border-radius: 50px;

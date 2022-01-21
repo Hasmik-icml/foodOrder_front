@@ -54,5 +54,5 @@ const specificProductPage = () => {
     </div>
     `;
 };
-document.querySelector(".add").addEventListener("click", () => { document.getElementsByClassName() })
+
 export {specificProductPage};
