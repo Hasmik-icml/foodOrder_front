@@ -9,8 +9,3 @@ import {specificProductPage} from "./js/views/specificProduct";
 // specificProductPage();
 renderRegisterPage();
 document.querySelector(".confirm-btn").addEventListener("click",function(){renderProductsPage()})
-
-//document.querySelector(".containerProducts").addEventListener("click", function(event){
-  //let target = event.target;
-  //console.log(event.target);
-//})

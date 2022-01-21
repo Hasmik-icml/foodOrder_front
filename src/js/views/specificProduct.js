@@ -1,4 +1,4 @@
-const specificProductPage = () => {
+const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML = ` <div id="mainContainer">
  <nav>
     <div id="menuToggle">
@@ -15,13 +15,13 @@ const specificProductPage = () => {
         </ul>
     </div>
 </nav>
-    <div class="grid-container">
+    <div class="gridContainer">
         <div class="item1">
             <h3>Պեպպերոնի</h3>
         </div>
         <div class="item2">
             <div class="pizza-img">
-                <img class="spcProductImg" src="img/pepperoniPizza.png" alt="pepperoniPizza">
+                <img class="spcProductImg" src="../img/pepperoniPizza.png" alt="pepperoniPizza">
             </div>
             <div class="price">
                 <label>Գին՝ ֏</label>
@@ -69,19 +69,9 @@ const specificProductPage = () => {
         totalPrice.value = initialPrice * quantity.value;
         }
     });
-    console.log(quantity.value);
     let initialPrice = document.querySelector(".productPrice").innerHTML;
-    console.log( initialPrice);
     let totalPrice = document.getElementById("totalPrice");
-
 
 };
 
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> ccbec62c56d4d895e668880b89e2f9520e1ee7d6
-export {specificProductPage};
+export {renderSpecificProductPage};

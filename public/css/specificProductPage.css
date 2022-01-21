@@ -3,7 +3,6 @@ html, body {
     height:100vh;
 }
 .container {
-    background:red;
     position:absolute;
     top:0px;
     right:0px;
@@ -16,18 +15,17 @@ html, body {
     background-size: cover;
     height: 100vh;
 }
-.grid-container {
+.gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 5px;
     font-size: 30px;
 }
 
-.grid-container  div {
+.gridContainer  div {
     color:white;
     text-align: center;
-    padding: 20px;
-    font-size: 30px;
+    font-size: 25px;
+    padding:10px;
 }
 .spcProductImg{
     height:250px;
@@ -37,10 +35,10 @@ html, body {
 .ingredientsOfProduct {
     text-align: left;
 }
-.grid-container div.ingredientsOfProduct {
+.gridContainer div.ingredientsOfProduct {
   text-align: left;
 }
-.grid-container div.numberOfProduct{
+.gridContainer div.numberOfProduct{
     padding:2px;
 
  }
@@ -128,7 +126,7 @@ html, body {
     position: relative;
     top: 50px;
     float:right;
-    right:30px;
+    right:42px;
     z-index: 1;
 
 
@@ -207,7 +205,7 @@ html, body {
 {
     position: absolute;
     width: 180px;
-    height: 400px;
+    height: 300px;
     margin: -100px 0 0 -170px;
     padding: 125px 30px 30px;
     border-radius: 20px;
