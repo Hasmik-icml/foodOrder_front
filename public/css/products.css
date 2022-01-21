@@ -1,9 +1,8 @@
 body{
-    background-image:url("public/img/img/genmen.jpg") ;
+    background-image:url("/img/genmen.jpg") ;
     background-repeat: no-repeat; 
      background-size: cover ;
 }
-
 .grid-container{
     width: 500px;
     display: grid;
