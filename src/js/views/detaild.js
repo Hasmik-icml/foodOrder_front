@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../public/css/detailed.css">
-  <title>Detailed menu</title>
-</head>
-
-<body>
-  <div class="container">
+const renderDetailedPage = () => {
+  document.querySelector(".container").innerHTML = `  <div class="container">
     <div class="product">
       <div class="productImg">
-        <img src="../../public/img/cheesePizza.png" alt="cheesePizza">
+        <img src="../../img/cheesePizza.png" alt="cheesePizza">
       </div>
       <div class="productName">
         <h2 class="detailedProductName">Cheese Pizza</h2>
@@ -30,7 +19,7 @@
 
   <div class="product">
     <div class="productImg">
-      <img src="../../public/img/pepperoniPizza.png" alt="cheesePizza">
+      <img src="../../img/pepperoniPizza.png" alt="cheesePizza">
     </div>
     <div class="productName">
       <h2 class="detailedProductName">Pepperoni Pizza</h2>
@@ -48,7 +37,7 @@
 
  <div class="product">
     <div class="productImg">
-      <img src="../../public/img/cheeseTomatoPizza.png" alt="cheesePizza">
+      <img src="../../img/cheeseTomatoPizza.png" alt="cheesePizza">
     </div>
     <div class="productName">
       <h2 class="detailedProductName">CheeseTomato Pizza</h2>
@@ -85,10 +74,9 @@
           </ul>
         </div>
         <!-- end filter window -->
-</div>
+</div>`;
 
-
-
-</body>
-
-</html>
+};
+export {
+  renderDetailedPage
+};

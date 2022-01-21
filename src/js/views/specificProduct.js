@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product menu</title>
-    <link rel="stylesheet" href="../../public/css/specificProduct.css">
-</head>
-<body>
-    <nav>
+const specificProductPage = () => {
+    document.querySelector(".container").innerHTML = ` 
+ <nav>
     <div id="menuToggle">
         <input type="checkbox" />
         <span></span>
@@ -27,7 +21,7 @@
         </div>
         <div class="item2">
             <div class="pizza-img">
-                <img src="../../public/img/pepperoniPizza.png" alt="pepperoniPizza">
+                <img class="spcProductImg" src="img/pepperoniPizza.png" alt="pepperoniPizza">
             </div>
             <div class="price">
                 <label>Գին՝</label>
@@ -46,13 +40,19 @@
             </div>
             <div class="numberOfProduct">
                 <h4>Քանակ</h4>
-                 <label>Կտոր</label>
-                <input type="number" class="quantity" name="quantity" min="1" max="16"><br>
+                <div class="quantityOfProduct"> 
+                <label>Կտոր</label>
+                 <button class="subtract">-</button>
+                <input type="text" class="quantity" id value="0" name="quantity">
+                <button class="add">+</button>
+                </div>
+               
             </div>
             <button class="addToBasket">Ավելացնել զամբյուղ</button>
         </div>
 
     </div>
-
-</body>
-</html>
+    `;
+};
+document.querySelector(".add").addEventListener("click", () => { document.getElementsByClassName() })
+export {specificProductPage};
