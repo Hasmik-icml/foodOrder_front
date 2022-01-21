@@ -4,7 +4,7 @@ html, body {
   
 }
 .containerProducts{
-    background-image:url("/img/genmen.jpg") ;
+    background-image:url("../img/genmen.jpg") ;
     background-repeat: no-repeat; 
      background-size: cover ;
      height: 100vh;
@@ -51,7 +51,7 @@ html, body {
     width: 130px;
     height:100px ;
     align-items: center;
-    justify-content: centers;
+    justify-content: center;
     align-self: center;
     justify-self: center;
     cursor: pointer;

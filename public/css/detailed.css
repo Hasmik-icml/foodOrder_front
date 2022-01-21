@@ -1,6 +1,6 @@
 
 html, body {
-    margin:0px;
+    margin:0;
     height:100%;
   
 }
@@ -23,6 +23,7 @@ html, body {
 }
 
 .product {
+  cursor:pointer;
   background-color: #e4b86d;
   width: 300px;
   height: 450px;

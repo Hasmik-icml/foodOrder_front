@@ -1,3 +1,5 @@
+import {specificProductEventListener} from "./helpers/eventListeners";
+
 const renderDetailedPage = () => {
   document.querySelector(".container").innerHTML = ` <div class="containerMainDetaild">  <div class="containerDetaild">
     <div class="product">
@@ -75,7 +77,7 @@ const renderDetailedPage = () => {
         </div>
         <!-- end filter window -->
 </div></div>`
-
+  specificProductEventListener();
 };
 export {
   renderDetailedPage

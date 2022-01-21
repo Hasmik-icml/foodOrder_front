@@ -19,7 +19,7 @@ body {
         height:100%;
       }
 .containerReg {
-    background-image: url("/img/reg.jpg");
+    background-image: url("../img/reg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
