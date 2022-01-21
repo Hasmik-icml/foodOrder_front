@@ -67,12 +67,14 @@ html, body {
 }
 
 #quantity{
+    border-radius: 10px;
+    border: 1px white solid;
+    color: #ffffff;
     text-align: center;
-    width: 67px;
-    height: 45px;
+    width: 56px;
+    height: 36px;
     font-size: 34px;
-    background-color: white;
-    border:1px solid grey;
+    background-image: linear-gradient(#8eb14d, #8acb8a);
 }
 
 #add{
@@ -82,21 +84,26 @@ html, body {
     border-right: none;
 }
 #add, #subtract {
-    background-color: white;
-    border:1px solid grey;
-    height: 45px;
-    width: 48px;
+    border: none;
+    color: #ffffff;
+    background: rgba(0,0,0,0);
+    height: 36px;
+    width: 40px;
     text-align: center;
     font-size: 28px;
 }
 
 #totalPrice{
+    border-radius: 10px;
+    border: 1px solid white;
+    color: #ffffff;
     font-size: 25px;
     height: 45px;
     width:100px;
     padding:0;
     margin:5px;
     text-align: center;
+    background-image: linear-gradient(#8eb14d, #8acb8a);
 }
 
 .addToBasket{
@@ -116,6 +123,7 @@ html, body {
 .item1 {
     grid-column-start: 1;
     grid-column-end: 3;
+    margin-top: 15px;
 }
 
 /*hidden menu css*/
