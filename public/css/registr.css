@@ -1,19 +1,41 @@
 body {
-    background-image: url("public/img/img/reg.jpg");
+    margin: 0;
+    padding: 0;
+    /* background-image: url("/img/reg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+.container {
+    background:red;
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px;
+}
+    
+    html, body {
+        margin:0px;
+        height:100%;
+      }
+.containerReg {
+    background-image: url("/img/reg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 150px;
     gap: 50px;
+    /* position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    left:0px; */
+    height: 100vh;
 }
 
-.comfirm-btn {
+.confirm-btn {
     width: 150px;
     height: 35px;
     border-radius: 50px;

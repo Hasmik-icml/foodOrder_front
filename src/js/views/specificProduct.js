@@ -77,8 +77,11 @@ const specificProductPage = () => {
 
 };
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> ccbec62c56d4d895e668880b89e2f9520e1ee7d6
 export {specificProductPage};
