@@ -1,3 +1,4 @@
+
 body {
   background-image: url("../img/genmen.jpg");
   background-repeat: no-repeat;
@@ -106,6 +107,7 @@ body {
   color: grey;
 }
 
+<<<<<<< HEAD
 .filter:hover ~.filterWindow {
   transform: translateX(0px);
   transition: transform 1s;
@@ -144,3 +146,5 @@ body {
   display: flex;
   justify-content: center;
 }
+
+
