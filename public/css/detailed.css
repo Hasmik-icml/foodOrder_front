@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/genmen.jpg");
+  background-image: url("public/img/img/genmen.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -117,7 +117,7 @@ body {
   position: absolute;
   z-index: 1;
   bottom: 40px;
-  background-image: url("../img/blackFon.jpg");
+  background-image: url("public/img/img/blackFon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   width: 250px;
