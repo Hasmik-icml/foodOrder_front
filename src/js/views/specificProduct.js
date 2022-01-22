@@ -2,16 +2,17 @@ const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML = ` <div id="mainContainer">
  <nav>
     <div id="menuToggle">
-        <input type="checkbox" />
-        <span></span>
-        <span></span>
-        <span></span>
+        <input class="checkboxMenu" type="checkbox" />
+        <span class="xspan"></span>
+        <span class="xspan"></span>
+        <span class="xspan"></span>
 
         <ul id="menu">
-            <a href="#"><li>Սեղան</li></a>
-            <a href="#"><li>About
-                </li></a>
-            <a href="#"><li>Info</li></a>
+            <li id="tableNumber"> Սեղան <span class="tableNum">1</span></li>
+            <li><a  id="basket" href="#"> <img id="shoppingIcon" src="/img/shopping-cart-icon.png">
+            <span id="basketCounter">0</span></a>
+                </li>
+            <li id="cancel">Չեղարկել</li>
         </ul>
     </div>
 </nav>
@@ -29,17 +30,17 @@ const renderSpecificProductPage = () => {
             </div>
         </div>
         <div class="item3">
+             <h4>Բաղադրություն</h4>
             <div class="ingredientsOfProduct">
-            <h4>Բաղադրություն</h4>
-            <input type="radio" id="ingredient1" name="ingredient1" value="cheese">
-            <label for="ingredient1"> Պանիր </label><br>
-            <input type="radio" id="ingredient2" name="ingredient2" value="pepperoni">
-            <label for="ingredient2"> Երշիկ </label><br>
-            <input type="radio" id="ingredient3" name="ingredient3" value="tomato"> 
+             <label for="ingredient1"> Պանիր </label>
+            <label for="ingredient2"> Երշիկ </label>
             <label for="ingredient3"> Լոլիկ </label>
+             <label for="ingredient4"> <input type="checkbox" id="checkbox1" name="ingredient4" value="onion">
+             Սոխ </label>
+            
             </div>
+             <h4>Քանակ</h4>
             <div class="numberOfProduct">
-                <h4>Քանակ</h4>
                 <div class="quantityOfProduct"> 
                 <label>Կտոր</label>
                  <button id="subtract">-</button>
@@ -52,7 +53,7 @@ const renderSpecificProductPage = () => {
                 </div>
                
             </div>
-            <button class="addToBasket">Ավելացնել զամբյուղ</button>
+            <button id="addToBasket">Ավելացնել զամբյուղ</button>
         </div>
 
          </div>
@@ -71,7 +72,14 @@ const renderSpecificProductPage = () => {
     });
     let initialPrice = document.querySelector(".productPrice").innerHTML;
     let totalPrice = document.getElementById("totalPrice");
-
+    document.getElementById("addToBasket").addEventListener("click", ()=>{
+        document.getElementById("basketCounter").innerHTML ++;
+    });
+    document.getElementById("cancel").addEventListener("click", ()=>{
+        if (confirm("Չեղարկե՞լ պատվերը")){
+            document.getElementById("basketCounter").innerHTML = 0;
+        }
+    });
 };
 
 export {renderSpecificProductPage};
