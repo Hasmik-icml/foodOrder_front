@@ -12,3 +12,4 @@
 import {renderBasketPage} from "./js/views/basket";
 
 renderBasketPage();
+

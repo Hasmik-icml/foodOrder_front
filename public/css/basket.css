@@ -1,10 +1,13 @@
-body {
-    background-image: url(../img/ej6.jpg);
-    background-repeat: no-repeat; 
-    background-size: cover ;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 .container {
+    height: 100vh;
+    background-image: url(../img/ej6.jpg);
+    background-repeat: no-repeat; 
+    background-size: cover ;
     background-image: url(../img/ej6.jpg);
     display: flex;
     flex-direction: column;
@@ -30,6 +33,14 @@ body {
 }
 
 .card h5 {
+    cursor: pointer;
+}
+
+.minus {
+    cursor: pointer;
+}
+
+.plus {
     cursor: pointer;
 }
 
