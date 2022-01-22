@@ -1,6 +1,6 @@
 
 import { basketPageEventListener} from "./helpers/eventListeners";
-const renderSpecificProductPage = () => {
+const renderSpecificProductPage = (tableNumber) => {
     document.querySelector(".container").innerHTML = ` <div id="mainContainer">
  <nav>
     <div id="menuToggle">
@@ -10,7 +10,7 @@ const renderSpecificProductPage = () => {
         <span class="xspan"></span>
 
         <ul id="menu">
-            <li id="tableNumber"> Սեղան <span class="tableNum">1</span></li>
+            <li id="tableNumber"> Սեղան <span class="tableNum">${tableNumber}</span></li>
             <li><a  id="basket" href="#"> <img id="shoppingIcon" src="/img/shopping-cart-icon.png">
             <span id="basketCounter">0</span></a>
                 </li>

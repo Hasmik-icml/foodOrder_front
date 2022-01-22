@@ -9,7 +9,9 @@
 // import {specificProductPage} from "./js/views/specificProduct";
 
 // specificProductPage()
-
+import {
+  writeToDocumentCookie
+} from "./js/views/helpers/eventListeners.js";
 import {
   renderBasketPage
 } from "./js/views/basket";
@@ -34,13 +36,7 @@ document.querySelector(".confirm-btn").addEventListener("click", function () {
   renderProductsPage();
 })
 
-
-
 //Ընտրված սեղանի համարի պահպանումը cookie-ում
-let select = document.getElementById('selectTable');
+writeToDocumentCookie();
 
-select.addEventListener("change", function () {
-  let option = select.options[select.selectedIndex];
-  document.cookie = "name=" + option.text;
-  console.log(document.cookie);
-})
+

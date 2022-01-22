@@ -77,7 +77,8 @@ const renderDetailedPage = () => {
         </div>
         <!-- end filter window -->
 </div></div>`
-  specificProductEventListener();
+let tableNumber = document.cookie.split("=")[1];
+  specificProductEventListener(tableNumber);
 };
 export {
   renderDetailedPage
