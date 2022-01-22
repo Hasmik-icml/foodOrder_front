@@ -1,3 +1,5 @@
+
+import { basketPageEventListener} from "./helpers/eventListeners";
 const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML = ` <div id="mainContainer">
  <nav>
@@ -80,6 +82,7 @@ const renderSpecificProductPage = () => {
             document.getElementById("basketCounter").innerHTML = 0;
         }
     });
+    basketPageEventListener();
 };
 
 export {renderSpecificProductPage};

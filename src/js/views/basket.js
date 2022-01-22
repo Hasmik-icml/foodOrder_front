@@ -45,7 +45,7 @@ const renderBasketPage = () => {
   <div class="total"><label>Ընդհանուր:</label> <label>2100դր</label></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
-//   document.querySelector(".container").innerHTML = card;
+  document.querySelector(".container").innerHTML = card;
 };
 
 export {renderBasketPage};
