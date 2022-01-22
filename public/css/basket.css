@@ -1,19 +1,29 @@
-body {
-    background-image: url(public/img/ej6.jpg);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    background-image: url(../img/ej6.jpg);
     background-repeat: no-repeat; 
     background-size: cover ;
+    background-image: url(../img/ej6.jpg);
+    display: flex;
+    flex-direction: column;
 }
 
 .arrow {
+    max-width: 50px;
+    max-height: 60px;
     font-size: 60px;
     color: #4472C4;
-    padding-left: 7px;
     cursor: pointer;
 }
 
 .card {
     height: 65px;
-    margin: 45px; 
+    margin: 35px; 
     display: flex;
     justify-content: space-around;
     font-size: 25px;
@@ -22,17 +32,38 @@ body {
     align-items: center;
 }
 
+.card h5 {
+    cursor: pointer;
+}
+
+.minus {
+    cursor: pointer;
+}
+
+.plus {
+    cursor: pointer;
+}
+
 .deleteProduct {
     font-family: cursive;
 }
 
-/* .confirm-btn {
-    
-} */
+ .confirm-btn {
+    cursor: pointer;
+    margin: auto;
+    width: 180px;
+    height: 55px;
+    font-size: 22px;
+    border-radius: 20px;
+    background-color: rgba(50, 200, 60, 0.5);
+    color: white;
+}
 
 .total {
+    width: 250px;
     height: 30px;
     font-size: 25px;
+    margin-left: 900px;
     padding: 10px;
     border-radius: 10px;
     float: right;
