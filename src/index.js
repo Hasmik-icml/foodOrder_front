@@ -1,4 +1,3 @@
-
 // import { renderRegisterPage } from "./js/views/register";
 // // import router from "./js/routing";
 // import { renderProductsPage } from "./js/views/products";
@@ -9,20 +8,28 @@
 // renderDetailedPage();
 // import {specificProductPage} from "./js/views/specificProduct";
 
-// specificProductPage();
-import {renderBasketPage} from "./js/views/basket";
+// specificProductPage()
 
-renderBasketPage();
-
-
-import { renderRegisterPage } from "./js/views/register";
+import {
+  renderBasketPage
+} from "./js/views/basket";
+import {
+  renderRegisterPage
+} from "./js/views/register";
 // import router from "./js/routing";
-import { renderProductsPage } from "./js/views/products";
+import {
+  renderProductsPage
+} from "./js/views/products";
 // router.redirect("/menu"
-import {renderDetailedPage} from "./js/views/detaild.js";
+import {
+  renderDetailedPage
+} from "./js/views/detaild.js";
 // renderDetailedPage();
-import {specificProductPage} from "./js/views/specificProduct";
+import {
+  specificProductPage
+} from "./js/views/specificProduct";
 // specificProductPage();
 renderRegisterPage();
-document.querySelector(".confirm-btn").addEventListener("click",function(){renderProductsPage()})
-
+document.querySelector(".confirm-btn").addEventListener("click", function () {
+  renderProductsPage()
+})
