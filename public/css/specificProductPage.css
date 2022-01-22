@@ -3,6 +3,8 @@ html, body {
     height:100vh;
 }
 .container {
+    min-width: fit-content; /* avelacrel em vor ej poqracneluc chkarchana fon@*/
+    min-height: fit-content; /* esel */
     position:absolute;
     top:0px;
     right:0px;
@@ -13,27 +15,54 @@ html, body {
     background-image:url("../img/genmen.jpg") ;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100vh; /* tokosov mi greq, ail vh vor ekrani chapov voch te contenti */
 }
 .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 30px;
+
+}
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 10vh;
+    font-size: larger;
+}
+.item3{
+
+    justify-self: center;
+    margin-bottom: 4vh;
+    padding: 5px;
 }
 
 .gridContainer  div {
     color:white;
     text-align: center;
     font-size: 25px;
-    padding:10px;
 }
 .spcProductImg{
     height:250px;
 
 
 }
+.price{
+    margin-top: 5%;
+}
+
 .ingredientsOfProduct {
+    font-size: 20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
     text-align: left;
+}
+#checkbox1{
+    height: 22px;
+    width: 22px;
+    background-image: linear-gradient(#8eb14d, #8acb8a);
+    border-radius: 10px;
 }
 .gridContainer div.ingredientsOfProduct {
   text-align: left;
@@ -58,6 +87,7 @@ html, body {
 
 }
 .totalPriceDiv{
+    gap: 10px;
     display:flex;
     align-items: center;
     justify-content: flex-start;
@@ -106,7 +136,7 @@ html, body {
     background-image: linear-gradient(#8eb14d, #8acb8a);
 }
 
-.addToBasket{
+#addToBasket{
     height: 50px;
     width: 170px;
     background-image: linear-gradient(#8eb14d, #8acb8a);
@@ -114,17 +144,14 @@ html, body {
     font-size: large;
     border-radius: 25px;
     float:right;
+    margin: 10%;
 }
-.addToBasket:hover{
+#addToBasket:hover{
     background-image: linear-gradient(red,darkred);
 }
 
 
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-    margin-top: 15px;
-}
+
 
 /*hidden menu css*/
 
@@ -139,7 +166,50 @@ html, body {
 
 
 }
+#tableNumber{
+    display: flex;
+    color: white;
+}
+.tableNum{
+    margin-left: 13px;
+    text-align: center;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    font-size: 26px;
+    color: #000000;
+    font-weight: bold;
+    background-image: linear-gradient(#ffca00, #fff871);
+}
+#basket{
+    display: flex;
+}
+#shoppingIcon{
+    height: 50px;
 
+}
+#basketCounter {
+    align-self: center;
+    margin: -13px -2px -26px -20px;
+    text-align: center;
+    display: block;
+    width: 25px;
+    height: 24px;
+    border: 1px solid navajowhite;
+    position: relative;
+    background: #ab0501;
+    border-radius: 100%;
+    z-index: 1;
+    font-size: 22px;
+    color: white;
+    font-family: ui-serif, sans-serif;
+}
+#cancel{
+    color: white;
+    cursor: pointer;
+
+}
 #menuToggle a
 {
     text-decoration: none;
@@ -153,7 +223,7 @@ html, body {
 }
 
 
-#menuToggle input
+.checkboxMenu
 {
     display: block;
     width: 40px;
@@ -170,9 +240,9 @@ html, body {
 }
 
 /*
- * Just a quick hamburger
+ * hamburger
  */
-#menuToggle span
+.xspan /* x*/
 {
     display: block;
     width: 33px;
@@ -181,11 +251,8 @@ html, body {
     position: relative;
     background: #cdcdcd;
     border-radius: 3px;
-
     z-index: 1;
-
     transform-origin: 5px 0;
-
     transition: transform 2s cubic-bezier(0.77,0.2,0.05,1.0),
     background 1s cubic-bezier(0.77,0.2,0.05,1.0),
     opacity 0.55s ease;
