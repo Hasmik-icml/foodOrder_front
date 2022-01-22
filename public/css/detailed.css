@@ -1,20 +1,29 @@
 
-body {
-  background-image: url("../img/genmen.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+html, body {
+    margin:0;
+    height:100%;
+  
 }
 
-.container {
+.containerMainDetaild{
+   background-image: url("../img/genmen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+      display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.containerDetaild {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  height: 700px;
   align-items: center;
   gap: 50px;
 }
 
 .product {
+  cursor:pointer;
   background-color: #e4b86d;
   width: 300px;
   height: 450px;
@@ -107,7 +116,7 @@ body {
   color: grey;
 }
 
-<<<<<<< HEAD
+
 .filter:hover ~.filterWindow {
   transform: translateX(0px);
   transition: transform 1s;
@@ -121,7 +130,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   width: 250px;
-  height: 600px;
+  height: 550px;
   padding: 10px;
   flex-direction: column;
   justify-content: center;
