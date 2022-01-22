@@ -31,5 +31,16 @@ import {
 // specificProductPage();
 renderRegisterPage();
 document.querySelector(".confirm-btn").addEventListener("click", function () {
-  renderProductsPage()
+  renderProductsPage();
+})
+
+
+
+//Ընտրված սեղանի համարի պահպանումը cookie-ում
+let select = document.getElementById('selectTable');
+
+select.addEventListener("change", function () {
+  let option = select.options[select.selectedIndex];
+  document.cookie = "name=" + option.text;
+  console.log(document.cookie);
 })
