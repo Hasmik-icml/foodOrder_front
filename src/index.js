@@ -31,12 +31,15 @@ import {
   specificProductPage
 } from "./js/views/specificProduct";
 // specificProductPage();
+import {
+  setCookie
+} from "."
 renderRegisterPage();
 document.querySelector(".confirm-btn").addEventListener("click", function () {
   renderProductsPage();
 })
 
 //Ընտրված սեղանի համարի պահպանումը cookie-ում
-writeToDocumentCookie();
+// writeToDocumentCookie();
 
 
