@@ -1,4 +1,4 @@
-import {specificProductEventListener} from "./helpers/eventListeners";
+import {specificProductEventListener} from "../helpers/eventListeners";
 
 const renderDetailedPage = () => {
   document.querySelector(".container").innerHTML = ` <div class="containerMainDetaild">  <div class="containerDetaild">

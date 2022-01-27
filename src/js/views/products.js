@@ -1,4 +1,4 @@
-import {productsEventListeners} from "./helpers/eventListeners.js"
+import {productsEventListeners} from "../helpers/eventListeners";
 const renderProductsPage=()=>{
   const container= ` <div class="containerProducts" ><div class="grid-container"><div class="grid-item">Տաք ուտեստ</div>
     <div class="grid-item">Խորտիկներ</div>

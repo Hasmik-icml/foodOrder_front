@@ -1,5 +1,5 @@
 
-import { basketPageEventListener} from "./helpers/eventListeners";
+import { basketPageEventListener} from "../helpers/eventListeners";
 const renderSpecificProductPage = (tableNumber) => {
     document.querySelector(".container").innerHTML = ` <div id="mainContainer">
  <nav>

@@ -1,12 +1,15 @@
 import {
   renderDetailedPage
-} from "../detaild.js";
+}
+from "../views/detaild.js";
 import {
   renderSpecificProductPage
-} from "../specificProduct";
+}
+from "../views/specificProduct";
 import {
   renderBasketPage
-} from "../basket.js";
+}
+from "../views/basket.js";
 
 export const productsEventListeners = () => {
   document.querySelectorAll(".grid-item").forEach(function (item) {

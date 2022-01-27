@@ -11,32 +11,45 @@
 // specificProductPage()
 import {
   writeToDocumentCookie
-} from "./js/views/helpers/eventListeners.js";
+} from "./js/helpers/eventListeners.js";
 import {
   renderBasketPage
 } from "./js/views/basket";
 import {
   renderRegisterPage
-} from "./js/views/register";
+}
+from "./js/views/register";
 // import router from "./js/routing";
 import {
   renderProductsPage
-} from "./js/views/products";
+}
+from "./js/views/products";
 // router.redirect("/menu"
 import {
   renderDetailedPage
-} from "./js/views/detaild.js";
+}
+from "./js/views/detaild.js";
 // renderDetailedPage();
 import {
   specificProductPage
-} from "./js/views/specificProduct";
+}
+from "./js/views/specificProduct";
 // specificProductPage();
 import {
   setCookie
-} from "."
+} from "./js/helpers/storage.js";
+
+import {
+  getCookie
+} from "./js/helpers/storage.js";
+
 renderRegisterPage();
+
+console.log(getCookie("table"));
 document.querySelector(".confirm-btn").addEventListener("click", function () {
+
   renderProductsPage();
+  setCookie("table", 3, 30);
 })
 
 //Ընտրված սեղանի համարի պահպանումը cookie-ում
