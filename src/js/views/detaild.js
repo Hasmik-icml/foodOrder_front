@@ -80,6 +80,4 @@ const renderDetailedPage = () => {
 let tableNumber = document.cookie.split("=")[1];
   specificProductEventListener(tableNumber);
 };
-export {
-  renderDetailedPage
-};
+export {renderDetailedPage};

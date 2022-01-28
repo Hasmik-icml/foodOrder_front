@@ -1,3 +1,5 @@
+import router from "../routing";
+import {registerEventListeners} from "../helpers/eventListeners"
 const renderRegisterPage =()=>{
   
     const container =`<div class="containerReg"> <select name="tables" id="selectTable" class="table-name">
@@ -8,7 +10,9 @@ const renderRegisterPage =()=>{
   </select> 
   <button class="confirm-btn">Ամրագրել</button></div> `
   document.querySelector(".container").innerHTML = container;
+    registerEventListeners();
 };
 
 export { renderRegisterPage };
+
 

@@ -11,7 +11,7 @@ const renderSpecificProductPage = (tableNumber) => {
 
         <ul id="menu">
             <li id="tableNumber"> Սեղան <span class="tableNum">${tableNumber}</span></li>
-            <li><a  id="basket" href="#"> <img id="shoppingIcon" src="/img/shopping-cart-icon.png">
+            <li><a id="basket" href="#"> <img id="shoppingIcon" src="/img/shopping-cart-icon.png">
             <span id="basketCounter">0</span></a>
                 </li>
             <li id="cancel">Չեղարկել</li>
@@ -82,6 +82,7 @@ const renderSpecificProductPage = (tableNumber) => {
             document.getElementById("basketCounter").innerHTML = 0;
         }
     });
+
     basketPageEventListener();
 };
 

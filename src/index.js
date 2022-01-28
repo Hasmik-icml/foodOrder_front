@@ -9,6 +9,7 @@
 // import {specificProductPage} from "./js/views/specificProduct";
 
 // specificProductPage()
+
 import {
   writeToDocumentCookie
 } from "./js/helpers/eventListeners.js";
@@ -43,16 +44,12 @@ import {
   getCookie
 } from "./js/helpers/storage.js";
 
-renderRegisterPage();
+import router from "./js/routing";
 
-console.log(getCookie("table"));
-document.querySelector(".confirm-btn").addEventListener("click", function () {
+router.redirect("/");
 
-  renderProductsPage();
-  setCookie("table", 3, 30);
-})
 
-//Ընտրված սեղանի համարի պահպանումը cookie-ում
-// writeToDocumentCookie();
+
+
 
 

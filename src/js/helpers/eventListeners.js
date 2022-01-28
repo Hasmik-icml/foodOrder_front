@@ -1,3 +1,5 @@
+import router from "../routing";
+
 import {
   renderDetailedPage
 }
@@ -10,6 +12,13 @@ import {
   renderBasketPage
 }
 from "../views/basket.js";
+
+export const registerEventListeners = () => {
+  document.querySelector(".confirm-btn").addEventListener("click", function () {
+    router.redirect('/products');
+
+  })
+}
 
 export const productsEventListeners = () => {
   document.querySelectorAll(".grid-item").forEach(function (item) {
