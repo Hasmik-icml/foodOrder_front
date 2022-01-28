@@ -40,16 +40,31 @@ import {
   setCookie
 } from "./js/helpers/storage.js";
 
-import {
-  getCookie
-} from "./js/helpers/storage.js";
+import {getCookie} from "./js/helpers/storage.js";
 
 import router from "./js/routing";
+import {renderBurgerPage} from "./js/views/navBar";
 
-router.redirect("/");
+let hash = window.location.hash;
+
+//if(getCookie("table") !== ""){
+
+let hashString = (hash.indexOf("#") >= 0) &&
+(hash.split("#")[1] !== "/") ?
+    hash.split("#")[1] : "/";
+   router.redirect(hashString);
+
+
+ // }
+ //  else{
+ //    router.redirect("/");
+ //  }
 
 
 
-
+//reload con getcookies
+// /:
+//ete ? ic heto eli ban ka => et ej?id or name = => specialproduct page localhost:8080/menu/pizza?name=peperoni
+// node js router
 
 

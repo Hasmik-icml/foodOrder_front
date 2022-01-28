@@ -7,12 +7,18 @@ export const setCookie = (name, value, expDate = 30) => {
    // console.log(document.cookie);
 }
 
-export const getCookie = (name) =>{//table=3 ====>[table , 3] 
-  // console.log(document.cookie); 
+export const getCookie = (name) =>{
+  // console.log(document.cookie);
+  if (document.cookie.indexOf(";") >= 0){
   return document.cookie.split(";").map(item => { 
     if (item.split("=")[0] === name) { 
       return item.split("="); 
     }
    })[1]; 
+}
+else{
+  return document.cookie.split("=")[1];
+
+}
 }
 

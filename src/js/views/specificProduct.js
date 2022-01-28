@@ -1,23 +1,7 @@
 
-import { basketPageEventListener} from "../helpers/eventListeners";
+import {basketPageEventListener, cancelOrder} from "../helpers/eventListeners";
 const renderSpecificProductPage = (tableNumber) => {
-    document.querySelector(".container").innerHTML = ` <div id="mainContainer">
- <nav>
-    <div id="menuToggle">
-        <input class="checkboxMenu" type="checkbox" />
-        <span class="xspan"></span>
-        <span class="xspan"></span>
-        <span class="xspan"></span>
-
-        <ul id="menu">
-            <li id="tableNumber"> Սեղան <span class="tableNum">${tableNumber}</span></li>
-            <li><a id="basket" href="#"> <img id="shoppingIcon" src="/img/shopping-cart-icon.png">
-            <span id="basketCounter">0</span></a>
-                </li>
-            <li id="cancel">Չեղարկել</li>
-        </ul>
-    </div>
-</nav>
+    document.querySelector(".container").innerHTML += ` <div id="mainContainer">
     <div class="gridContainer">
         <div class="item1">
             <h3>Պեպպերոնի</h3>
@@ -62,6 +46,8 @@ const renderSpecificProductPage = (tableNumber) => {
     </div>
     `;
     let quantity = document.getElementById("quantity");
+    let initialPrice = document.querySelector(".productPrice").innerHTML;
+    let totalPrice = document.getElementById("totalPrice");
     document.getElementById("add").addEventListener("click", ()=>{
         quantity.value++;
         totalPrice.value = initialPrice * quantity.value; // si pongo el numero, no cambia auto..
@@ -72,18 +58,13 @@ const renderSpecificProductPage = (tableNumber) => {
         totalPrice.value = initialPrice * quantity.value;
         }
     });
-    let initialPrice = document.querySelector(".productPrice").innerHTML;
-    let totalPrice = document.getElementById("totalPrice");
+
     document.getElementById("addToBasket").addEventListener("click", ()=>{
         document.getElementById("basketCounter").innerHTML ++;
     });
-    document.getElementById("cancel").addEventListener("click", ()=>{
-        if (confirm("Չեղարկե՞լ պատվերը")){
-            document.getElementById("basketCounter").innerHTML = 0;
-        }
-    });
 
     basketPageEventListener();
+    cancelOrder();
 };
 
 export {renderSpecificProductPage};

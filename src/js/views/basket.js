@@ -1,5 +1,8 @@
+import {cancelOrder} from "../helpers/eventListeners";
+
 const renderBasketPage = () => {
-    const card = `<div class="containerBasket"> <i class="arrow">🡄</i>
+    document.querySelector(".container").innerHTML +=
+        `<div class="containerBasket"> <i class="arrow">🡄</i>
     <div class="card">
     <div><img src="../img/pepperoniPizza.png" width="70px" height="60px"/></div>
     <div><h5>Պեպպերոնի</h5></div>
@@ -45,7 +48,7 @@ const renderBasketPage = () => {
   <div class="total"><label>Ընդհանուր:</label> <label>2100դր</label></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
-  document.querySelector(".container").innerHTML = card;
+    cancelOrder();
 };
 
 export {renderBasketPage};

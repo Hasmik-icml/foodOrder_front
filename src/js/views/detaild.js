@@ -1,8 +1,9 @@
-import {specificProductEventListener} from "../helpers/eventListeners";
+import {basketPageEventListener, cancelOrder, specificProductEventListener} from "../helpers/eventListeners";
 
 const renderDetailedPage = () => {
-  document.querySelector(".container").innerHTML = ` <div class="containerMainDetaild">  <div class="containerDetaild">
-    <div class="product">
+  document.querySelector(".container").innerHTML +=
+      ` <div class="containerMainDetaild">  <div class="containerDetaild">
+    <div id="cheese" class="product">
       <div class="productImg">
         <img src="../img/cheesePizza.png" alt="cheesePizza">
       </div>
@@ -19,7 +20,7 @@ const renderDetailedPage = () => {
       </ul>
     </div>
 
-  <div class="product">
+  <div id="pepperoni" class="product">
     <div class="productImg">
       <img src="../img/pepperoniPizza.png" alt="cheesePizza">
     </div>
@@ -37,7 +38,7 @@ const renderDetailedPage = () => {
 
   </div>
 
- <div class="product">
+ <div id="cheese_tomato" class="product">
     <div class="productImg">
       <img src="../img/cheeseTomatoPizza.png" alt="cheesePizza">
     </div>
@@ -77,7 +78,9 @@ const renderDetailedPage = () => {
         </div>
         <!-- end filter window -->
 </div></div>`
-let tableNumber = document.cookie.split("=")[1];
-  specificProductEventListener(tableNumber);
+
+  specificProductEventListener();
+  basketPageEventListener();
+  cancelOrder();
 };
 export {renderDetailedPage};

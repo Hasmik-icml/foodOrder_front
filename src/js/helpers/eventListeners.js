@@ -12,42 +12,58 @@ import {
   renderBasketPage
 }
 from "../views/basket.js";
+import {getCookie, setCookie} from "./storage";
+import {renderBurgerPage} from "../views/navBar";
+
 
 export const registerEventListeners = () => {
-  document.querySelector(".confirm-btn").addEventListener("click", function () {
+  let select= document.getElementById('selectTable')
+      select.addEventListener("change", function () {
+        document.querySelector(".confirm-btn")
+      .addEventListener("click", function () {
+        setCookie("table", select.value);
+    getCookie("table");
     router.redirect('/products');
-
   })
+})
 }
 
 export const productsEventListeners = () => {
-  document.querySelectorAll(".grid-item").forEach(function (item) {
-    item.addEventListener("click", function () {
-      console.log("hi");
-      renderDetailedPage();
-    })
-  })
-}
+  document.querySelectorAll(".grid-item").forEach(item =>
+     item.addEventListener("click", function () {
+       console.log(this.id);
+       router.redirect(`/products/${this.id}`);
+     }
+     )
+  )
+        }
 
-export const specificProductEventListener = (tableNumber) => {
-  document.querySelectorAll(".product").forEach(item => item.addEventListener("click",
-    () => renderSpecificProductPage(tableNumber)))
+
+
+export const specificProductEventListener = () => {
+  document.querySelectorAll(".product").forEach
+  (item => item.addEventListener("click",
+      function () {
+         let hash = window.location.hash;
+        router.redirect(`${hash}/${this.id}`);
+    }
+ ))
+}
+export const cancelOrder = () => {
+  document.getElementById("cancel").
+  addEventListener("click", ()=>{
+    if (confirm("Չեղարկե՞լ պատվերը")){
+      document.getElementById("basketCounter").innerHTML = 0;
+    }
+  })
 }
 
 export const basketPageEventListener = () => {
-  document.getElementById("shoppingIcon").addEventListener("click", function () {
-    renderBasketPage();
-    console.log("hello");
+    let hash = window.location.hash;
 
+  document.getElementById("shoppingIcon").addEventListener
+  ("click", function () {
+      router.redirect(`/basket`);
   })
 }
 
-export const writeToDocumentCookie = () => {
-  let select = document.getElementById('selectTable');
-  console.log(select);
-  select.addEventListener("change", function () {
-    let option = select.options[select.selectedIndex];
-    document.cookie = "name=" + option.text;
-    // console.log(document.cookie);
-  })
-}
