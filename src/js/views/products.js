@@ -1,4 +1,9 @@
-import {basketPageEventListener, cancelOrder, productsEventListeners} from "../helpers/eventListeners";
+import {
+  basketPageEventListener,
+  cancelOrder,
+  pageBackEventListener,
+  productsEventListeners
+} from "../helpers/eventListeners";
 const renderProductsPage=()=>{
   document.querySelector(".container").innerHTML
       += ` <div class="containerProducts" ><div class="grid-container">
@@ -12,5 +17,6 @@ const renderProductsPage=()=>{
   productsEventListeners();
   basketPageEventListener();
   cancelOrder();
+  pageBackEventListener();
 };
 export { renderProductsPage };

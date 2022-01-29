@@ -13,7 +13,8 @@ html, body {
     flex-direction: column;
 }
 
-.arrow {
+ .arrow {
+    position:relative;
     max-width: 50px;
     max-height: 60px;
     font-size: 60px;

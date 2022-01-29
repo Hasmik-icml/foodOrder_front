@@ -3,6 +3,17 @@
     background-size: cover;
     height: 100vh; /* tokosov mi greq, ail vh vor ekrani chapov voch te contenti */
 }
+ .navArrow {
+    position: absolute;
+    float: left;
+    z-index: 2;
+    top: 0vh;
+    max-width: 50px;
+    max-height: 60px;
+    font-size: 60px;
+    color: #4472C4;
+    cursor: pointer;
+}
 nav {
     position: absolute;
     float: right;
@@ -43,6 +54,7 @@ nav {
     display: flex;
 }
 #shoppingIcon{
+    cursor:pointer;
     height: 50px;
 
 }

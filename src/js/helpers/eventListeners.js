@@ -60,10 +60,21 @@ export const cancelOrder = () => {
 
 export const basketPageEventListener = () => {
     let hash = window.location.hash;
-
   document.getElementById("shoppingIcon").addEventListener
   ("click", function () {
       router.redirect(`/basket`);
   })
+}
+export const pageBackEventListener = () => {
+    document.querySelector(".navArrow").addEventListener
+    ("click", function () {
+        window.history.back();
+    })
+}
+export const BackEventListener = () => {
+    document.querySelector(".arrow").addEventListener
+    ("click", function () {
+        window.history.back();
+    })
 }
 

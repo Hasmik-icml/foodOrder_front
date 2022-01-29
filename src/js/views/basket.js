@@ -1,7 +1,7 @@
-import {cancelOrder} from "../helpers/eventListeners";
+import {BackEventListener, cancelOrder} from "../helpers/eventListeners";
 
 const renderBasketPage = () => {
-    document.querySelector(".container").innerHTML +=
+    document.querySelector(".container").innerHTML =
         `<div class="containerBasket"> <i class="arrow">🡄</i>
     <div class="card">
     <div><img src="../img/pepperoniPizza.png" width="70px" height="60px"/></div>
@@ -48,6 +48,7 @@ const renderBasketPage = () => {
   <div class="total"><label>Ընդհանուր:</label> <label>2100դր</label></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
+    BackEventListener()
     cancelOrder();
 };
 

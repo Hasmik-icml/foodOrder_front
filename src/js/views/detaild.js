@@ -1,4 +1,9 @@
-import {basketPageEventListener, cancelOrder, specificProductEventListener} from "../helpers/eventListeners";
+import {
+  basketPageEventListener,
+  cancelOrder,
+  pageBackEventListener,
+  specificProductEventListener
+} from "../helpers/eventListeners";
 
 const renderDetailedPage = () => {
   document.querySelector(".container").innerHTML +=
@@ -78,7 +83,7 @@ const renderDetailedPage = () => {
         </div>
         <!-- end filter window -->
 </div></div>`
-
+  pageBackEventListener();
   specificProductEventListener();
   basketPageEventListener();
   cancelOrder();

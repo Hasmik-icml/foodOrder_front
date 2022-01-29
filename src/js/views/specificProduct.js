@@ -1,7 +1,8 @@
 
-import {basketPageEventListener, cancelOrder} from "../helpers/eventListeners";
+import {basketPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
 const renderSpecificProductPage = (tableNumber) => {
     document.querySelector(".container").innerHTML += ` <div id="mainContainer">
+    
     <div class="gridContainer">
         <div class="item1">
             <h3>Պեպպերոնի</h3>
@@ -65,6 +66,7 @@ const renderSpecificProductPage = (tableNumber) => {
 
     basketPageEventListener();
     cancelOrder();
+    pageBackEventListener();
 };
 
 export {renderSpecificProductPage};
