@@ -55,16 +55,3 @@ let hashString = (hash.indexOf("#") >= 0) &&
    router.redirect(hashString);
 
 
- // }
- //  else{
- //    router.redirect("/");
- //  }
-
-
-
-//reload con getcookies
-// /:
-//ete ? ic heto eli ban ka => et ej?id or name = => specialproduct page localhost:8080/menu/pizza?name=peperoni
-// node js router
-
-

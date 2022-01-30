@@ -78,3 +78,21 @@ export const BackEventListener = () => {
     })
 }
 
+export const fiterSearchListener = () => {
+  document.querySelector("#searchInput").addEventListener("keyup", function () {
+    let filter = document.querySelector("#searchInput").value.toUpperCase();
+    // console.log(filter);
+    let li = document.querySelector(".filterItem").getElementsByTagName("li");
+    let a;
+    let txtValue;
+    for (let i = 0; i < li.length; i++) {
+      txtValue = li[i].innerText;
+      console.log(txtValue);
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  })
+}
