@@ -1,9 +1,10 @@
+import constants from "../helpers/constants"
 import {
   basketPageEventListener,
   cancelOrder,
   pageBackEventListener,
   specificProductEventListener, fiterSearchListener
-} from "../helpers/eventListeners";
+ } from "../helpers/eventListeners";
 
 const renderDetailedPage = (textValue) => {
  

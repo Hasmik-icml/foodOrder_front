@@ -22,13 +22,15 @@ fetch("http://localhost:8080/productType?url=get-all")
 
   document.querySelector(".grid-container")
       .insertAdjacentHTML("beforeend", type);
-})
+      basketPageEventListener();
+      cancelOrder();
+      pageBackEventListener();
+      productsEventListeners();
+    })
 
 
-  basketPageEventListener();
-  cancelOrder();
-  pageBackEventListener();
-  productsEventListeners();
+  
+ 
 
 }
 

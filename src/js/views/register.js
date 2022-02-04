@@ -1,6 +1,8 @@
 import router from "../routing";
 import {registerEventListeners} from "../helpers/eventListeners"
 import {setCookie} from "../helpers/storage";
+import  CONSTANTS from "../helpers/constants";
+
 const renderRegisterPage =()=>{
     document.querySelector(".container").innerHTML
         =`<div class="containerReg">
@@ -10,7 +12,17 @@ const renderRegisterPage =()=>{
   </select> 
   <button class="confirm-btn">Ամրագրել</button></div> `
 
-  
+  fetch(`${CONSTANTS.HOST}/table?url=get-all`)  
+    
+  .then(function (response){
+        return response.json()
+    }).then(function(data){
+        let id = data.reduce((acc,current) => {
+            return acc += `<option value="${current.id}">${current.number}</option> `
+    }, "");
+        document.getElementById("selectTable")
+            .insertAdjacentHTML("beforeend", id);
+})
 
 
 
