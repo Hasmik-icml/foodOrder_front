@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    height: 100vh;
 }
 
 .containerBasket {
@@ -8,7 +9,6 @@ html, body {
     background-image: url(../img/ej6.jpg);
     background-repeat: no-repeat; 
     background-size: cover ;
-    background-image: url(../img/ej6.jpg);
     display: flex;
     flex-direction: column;
 }

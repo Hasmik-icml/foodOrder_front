@@ -2,13 +2,15 @@ import {
   basketPageEventListener,
   cancelOrder,
   pageBackEventListener,
-  specificProductEventListener
+  specificProductEventListener, fiterSearchListener
 } from "../helpers/eventListeners";
 
-const renderDetailedPage = () => {
+const renderDetailedPage = (textValue) => {
+ 
+
   document.querySelector(".container").innerHTML +=
-      ` <div class="containerMainDetaild">  <div class="containerDetaild">
-    <div id="cheese" class="product">
+    ` <div class="containerMainDetaild"> <div class="containerDetaild">
+      <div id="cheese" class="product">
       <div class="productImg">
         <img src="../img/cheesePizza.png" alt="cheesePizza">
       </div>
@@ -40,7 +42,6 @@ const renderDetailedPage = () => {
       <li>Tomato</li>
       <li>Pepper</li>
     </ul>
-
   </div>
 
  <div id="cheese_tomato" class="product">
@@ -58,7 +59,6 @@ const renderDetailedPage = () => {
       <li>Tomato</li>
       <li>Pepper</li>
     </ul>
-
     </div>
   
 </div>
@@ -69,7 +69,7 @@ const renderDetailedPage = () => {
         <!-- end filter button -->
         <div class="filterWindow hidden">
           <div class="filterInputBlock">
-            <input type="text" class="searchIngredient" placeholder="Search for ingredients..">
+            <input type="text" id = "searchInput" class="searchIngredient" autocomplete="off" placeholder="Search for ingredients..">
             <!-- <h2 class="filterClose">X</h2> ??????????-->
           </div>
 
@@ -83,9 +83,12 @@ const renderDetailedPage = () => {
         </div>
         <!-- end filter window -->
 </div></div>`
+  fiterSearchListener();
   pageBackEventListener();
   specificProductEventListener();
   basketPageEventListener();
   cancelOrder();
 };
-export {renderDetailedPage};
+export {
+  renderDetailedPage
+};

@@ -4,7 +4,9 @@ import {
     pageBackEventListener,
     productsEventListeners
 } from "../helpers/eventListeners";
+
 import {getCookie} from "../helpers/storage";
+
 const renderBurgerPage = () => {
     document.querySelector(".container").innerHTML =
         `<i class="navArrow">🡄</i> 
