@@ -86,7 +86,9 @@ export const fiterSearchListener = () => {
     for (let i = 0; i < li.length; i++) {
       txtValue = li[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        renderDetailedPage(txtValue);
         li[i].style.display = "";
+        
       } else {
         li[i].style.display = "none";
       }

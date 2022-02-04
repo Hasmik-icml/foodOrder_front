@@ -5,10 +5,12 @@ import {
   specificProductEventListener, fiterSearchListener
 } from "../helpers/eventListeners";
 
-const renderDetailedPage = () => {
+const renderDetailedPage = (textValue) => {
+ 
+
   document.querySelector(".container").innerHTML +=
-    ` <div class="containerMainDetaild">  <div class="containerDetaild">
-    <div id="cheese" class="product">
+    ` <div class="containerMainDetaild"> <div class="containerDetaild">
+      <div id="cheese" class="product">
       <div class="productImg">
         <img src="../img/cheesePizza.png" alt="cheesePizza">
       </div>
@@ -40,7 +42,6 @@ const renderDetailedPage = () => {
       <li>Tomato</li>
       <li>Pepper</li>
     </ul>
-
   </div>
 
  <div id="cheese_tomato" class="product">
@@ -58,7 +59,6 @@ const renderDetailedPage = () => {
       <li>Tomato</li>
       <li>Pepper</li>
     </ul>
-
     </div>
   
 </div>
