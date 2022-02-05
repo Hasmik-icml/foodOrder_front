@@ -1,4 +1,5 @@
 import router from "../routing";
+
 import {registerEventListeners} from "../helpers/eventListeners"
 import {setCookie} from "../helpers/storage";
 import  CONSTANTS from "../helpers/constants";
@@ -24,11 +25,15 @@ const renderRegisterPage =()=>{
             .insertAdjacentHTML("beforeend", id);
 })
 
-
-
-    registerEventListeners();
+   registerEventListeners();
 }
 
-export { renderRegisterPage };
+export {
+    renderRegisterPage
+};
 
+
+/*<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>*/
 

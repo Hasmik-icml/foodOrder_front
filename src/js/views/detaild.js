@@ -9,6 +9,12 @@ import {
 const renderDetailedPage = (textValue) => {
  
 
+<<<<<<< HEAD
+const renderDetailedPage = (textValue) => {
+ 
+
+=======
+>>>>>>> be32f66f606e371ae07871872569a10f07c8a18b
   document.querySelector(".container").innerHTML +=
     ` <div class="containerMainDetaild"> <div class="containerDetaild">
       <div id="2" class="product">
