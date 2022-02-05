@@ -108,9 +108,11 @@ html, body {
 }
 
 #add{
+    cursor: pointer;
     border-left: none;
 }
 #subtract{
+    cursor: pointer;
     border-right: none;
 }
 #add, #subtract {
@@ -137,6 +139,7 @@ html, body {
 }
 
 #addToBasket{
+    cursor: pointer;
     height: 50px;
     width: 170px;
     background-image: linear-gradient(#8eb14d, #8acb8a);
