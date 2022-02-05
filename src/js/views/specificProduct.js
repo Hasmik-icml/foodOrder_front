@@ -20,7 +20,7 @@ const renderSpecificProductPage = () => {
         then(function(response){
           return response.json();
     }).then(function(data) {
-        console.log(data);
+        console.log(data[0].ingredients);
 
             let sp =  data.reduce((acc,current) => {
           return acc +=
@@ -59,15 +59,15 @@ const renderSpecificProductPage = () => {
         </div>`
       }, "");
 
-           /* let item3 = data.ingredients.reduce((acc,current) => {
+           let item3 = data[0].ingredients.reduce((acc,current) => {
                 return acc +=  `<label> ${current.name} </label>`
-            },"")*/
+            },"")
 
 
         document.querySelector(".gridContainer")
             .insertAdjacentHTML("afterbegin", sp);
-      /*  document.querySelector(".ingredientsOfProduct")
-            .insertAdjacentHTML("afterbegin", item3);*/
+        document.querySelector(".ingredientsOfProduct")
+            .insertAdjacentHTML("afterbegin", item3);
 
         let quantity = document.getElementById("quantity");
         let initialPrice = document.querySelector(".productPrice").innerHTML;
