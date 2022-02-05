@@ -16,10 +16,10 @@ const renderRegisterPage =()=>{
   fetch(`${CONSTANTS.HOST}/table?url=get-all`)  
     
   .then(function (response){
-        return response.json()
+        return response.json();
     }).then(function(data){
         let id = data.reduce((acc,current) => {
-            return acc += `<option value="${current.id}">${current.number}</option> `
+            return acc += `<option value="${current.id}">${current.number}</option> `;
     }, "");
         document.getElementById("selectTable")
             .insertAdjacentHTML("beforeend", id);

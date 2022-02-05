@@ -4,37 +4,35 @@ import {
   pageBackEventListener,
   productsEventListeners
 } from "../helpers/eventListeners";
-const renderProductsPage=()=>{
-  document.querySelector(".container").innerHTML
-      += ` <div class="containerProducts" >
+const renderProductsPage = () => {
+  document.querySelector(".container").innerHTML += ` <div class="containerProducts" >
                 <div class="grid-container">
  
                 </div>
         </div>`
 
-fetch("http://localhost:8080/productType?url=get-all")
-    .then(function(response){
-      return response.json()
-    }).then(function(data){
-  let type = data.reduce((acc,current) => {
-    return acc += `<div id="${current.name}" class="grid-item">${current.name}</div> `
-  }, "");
+  fetch("http://localhost:8080/productType?url=get-all")
+    .then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      console.log("data", data);
+      let type = data.reduce((acc, current) => {
+        console.log("current", current);
+        return acc += `<div id="${current.name}" class="grid-item">${current.name}</div> `
+      }, "");
 
-  document.querySelector(".grid-container")
-      .insertAdjacentHTML("beforeend", type);
+      document.querySelector(".grid-container")
+        .insertAdjacentHTML("beforeend", type);
       basketPageEventListener();
       cancelOrder();
       pageBackEventListener();
       productsEventListeners();
     })
-
-
-  
- 
-
 }
 
-export { renderProductsPage };
+export {
+  renderProductsPage
+};
 
 /*   <div id="hot_dishes" class="grid-item ">Տաք ուտեստ</div>
 
