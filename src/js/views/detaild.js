@@ -11,7 +11,7 @@ const renderDetailedPage = (textValue) => {
 
   document.querySelector(".container").innerHTML +=
     ` <div class="containerMainDetaild"> <div class="containerDetaild">
-      <div id="cheese" class="product">
+      <div id="2" class="product">
       <div class="productImg">
         <img src="../img/cheesePizza.png" alt="cheesePizza">
       </div>
@@ -28,7 +28,7 @@ const renderDetailedPage = (textValue) => {
       </ul>
     </div>
 
-  <div id="pepperoni" class="product">
+  <div id="1" class="product">
     <div class="productImg">
       <img src="../img/pepperoniPizza.png" alt="cheesePizza">
     </div>
@@ -45,7 +45,7 @@ const renderDetailedPage = (textValue) => {
     </ul>
   </div>
 
- <div id="cheese_tomato" class="product">
+ <div id="3" class="product">
     <div class="productImg">
       <img src="../img/cheeseTomatoPizza.png" alt="cheesePizza">
     </div>

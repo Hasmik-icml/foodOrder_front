@@ -4,6 +4,8 @@ import {
   pageBackEventListener,
   productsEventListeners
 } from "../helpers/eventListeners";
+import  CONSTANTS from "../helpers/constants";
+
 const renderProductsPage=()=>{
   document.querySelector(".container").innerHTML
       += ` <div class="containerProducts" >
@@ -12,7 +14,7 @@ const renderProductsPage=()=>{
                 </div>
         </div>`
 
-fetch("http://localhost:8080/productType?url=get-all")
+fetch(`${CONSTANTS.HOST}/productType?url=get-all`)
     .then(function(response){
       return response.json()
     }).then(function(data){
@@ -22,15 +24,13 @@ fetch("http://localhost:8080/productType?url=get-all")
 
   document.querySelector(".grid-container")
       .insertAdjacentHTML("beforeend", type);
-      basketPageEventListener();
-      cancelOrder();
-      pageBackEventListener();
-      productsEventListeners();
+
+    basketPageEventListener();
+    cancelOrder();
+    pageBackEventListener();
+    productsEventListeners();
+
     })
-
-
-  
- 
 
 }
 

@@ -57,6 +57,7 @@ export const cancelOrder = () => {
   addEventListener("click", () => {
     if (confirm("Չեղարկե՞լ պատվերը")) {
       document.getElementById("basketCounter").innerHTML = 0;
+      router.redirect("/");
     }
   })
 }
