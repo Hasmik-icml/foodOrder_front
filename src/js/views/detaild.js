@@ -59,15 +59,15 @@ fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
     })
     .then(function (data) {
       {
-
-        let res = data.filter(function (params) {
-          return params.name == productType;
+        // data = [{}{}{}]  ->>>>>>>>> [{id=2, name=juice}]
+        let res = data.filter(function (params) {//{id=2,name=xort}
+          return params.name == productType; // xortic==jucie
         })
         show(res);
       }
     })
 
-  function show(product_type_id) {
+  function show(product_type_id) {//[id=2,name-juice]
 
     fetch(`${CONSTANTS.HOST}/product?url=get-all-by-product-type&product_type_id=${product_type_id[0].id}`)
       .then(function (response) {
