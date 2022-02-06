@@ -58,6 +58,12 @@ nav {
     height: 50px;
 
 }
+
+#homeIcon{
+    cursor:pointer;
+    height: 50px;
+}
+
 #basketCounter {
     align-self: center;
     margin: -13px -2px -26px -20px;
@@ -164,6 +170,7 @@ nav {
 
 #menu li
 {
+    color: white;
     padding: 10px 0;
     font-size: 22px;
 }

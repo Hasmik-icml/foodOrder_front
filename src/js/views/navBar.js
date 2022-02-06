@@ -18,6 +18,7 @@ const renderBurgerPage = () => {
         <span class="xspan"></span>
 
         <ul id="menu">
+           <li id="home"> <img id="homeIcon" src="./img/homeicon.png" alt="image"> </li>
             <li id="tableNumber"> Սեղան <span class="tableNum">${getCookie("table")}</span></li>
             <li><a id="basket"> <img id="shoppingIcon" src="./img/shopping-cart-icon.png" alt="image">
                 <span id="basketCounter">0</span></a>
