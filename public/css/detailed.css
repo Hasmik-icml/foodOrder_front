@@ -4,7 +4,9 @@ body {
   height: 100vh;
 
 }
-
+.hidden{
+  display: none;
+}
 .containerMainDetaild {
   background-image: url("../img/genmen.jpg");
   background-repeat: no-repeat;

@@ -1,30 +1,45 @@
 
 import {basketPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
-const renderSpecificProductPage = (tableNumber) => {
+import  CONSTANTS from "../helpers/constants";
+
+const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML += ` <div id="mainContainer">
     
     <div class="gridContainer">
-        <div class="item1">
-            <h3>Պեպպերոնի</h3>
+      
+       
+
+         </div>
+    </div>
+    `;
+
+    let productId = window.location.hash.split("/").pop();
+    console.log(productId);
+
+    fetch(`${CONSTANTS.HOST}/product?url=get-by-id&product_id=${productId}`).
+        then(function(response){
+          return response.json();
+    }).then(function(data) {
+        console.log(data[0].ingredients);
+
+            let sp =  data.reduce((acc,current) => {
+          return acc +=
+              `<div class="item1">
+            <h3>${current.name}</h3>
         </div>
         <div class="item2">
             <div class="pizza-img">
-                <img class="spcProductImg" src="../img/pepperoniPizza.png" alt="pepperoniPizza">
+                <img class="spcProductImg" src=${current.imagePath} alt=${current.name}>
             </div>
             <div class="price">
-                <label>Գին՝ ֏</label>
-                <label class="productPrice">350</label>
+                <label>Գին՝ ${current.currency}</label>
+                <label class="productPrice">${current.price}</label>
             </div>
         </div>
-        <div class="item3">
+          <div class="item3">
              <h4>Բաղադրություն</h4>
             <div class="ingredientsOfProduct">
-             <label for="ingredient1"> Պանիր </label>
-            <label for="ingredient2"> Երշիկ </label>
-            <label for="ingredient3"> Լոլիկ </label>
-             <label for="ingredient4"> <input type="checkbox" id="checkbox1" name="ingredient4" value="onion">
-             Սոխ </label>
-            
+          
             </div>
              <h4>Քանակ</h4>
             <div class="numberOfProduct">
@@ -41,32 +56,46 @@ const renderSpecificProductPage = (tableNumber) => {
                
             </div>
             <button id="addToBasket">Ավելացնել զամբյուղ</button>
-        </div>
+        </div>`
+      }, "");
 
-         </div>
-    </div>
-    `;
-    let quantity = document.getElementById("quantity");
-    let initialPrice = document.querySelector(".productPrice").innerHTML;
-    let totalPrice = document.getElementById("totalPrice");
-    document.getElementById("add").addEventListener("click", ()=>{
-        quantity.value++;
-        totalPrice.value = initialPrice * quantity.value; // si pongo el numero, no cambia auto..
-    });
-    document.getElementById("subtract").addEventListener("click", ()=>{
-        if(quantity.value>0)
-        {quantity.value--;
-        totalPrice.value = initialPrice * quantity.value;
-        }
+           let item3 = data[0].ingredients.reduce((acc,current) => {
+                return acc +=  `<label> ${current.name} </label>`
+            },"")
+
+
+        document.querySelector(".gridContainer")
+            .insertAdjacentHTML("afterbegin", sp);
+        document.querySelector(".ingredientsOfProduct")
+            .insertAdjacentHTML("afterbegin", item3);
+
+        let quantity = document.getElementById("quantity");
+        let initialPrice = document.querySelector(".productPrice").innerHTML;
+        let totalPrice = document.getElementById("totalPrice");
+        document.getElementById("add").addEventListener("click", ()=>{
+            quantity.value++;
+            totalPrice.value = initialPrice * quantity.value; // si pongo el numero, no cambia auto..
+        });
+        document.getElementById("subtract").addEventListener("click", ()=>{
+            if(quantity.value>0)
+            {quantity.value--;
+                totalPrice.value = initialPrice * quantity.value;
+            }
+        });
+
+        document.getElementById("addToBasket").addEventListener("click", ()=>{
+            document.getElementById("basketCounter").innerHTML ++;
+        });
+
+        basketPageEventListener();
+        cancelOrder();
+        pageBackEventListener();
+
     });
 
-    document.getElementById("addToBasket").addEventListener("click", ()=>{
-        document.getElementById("basketCounter").innerHTML ++;
-    });
 
-    basketPageEventListener();
-    cancelOrder();
-    pageBackEventListener();
 };
 
 export {renderSpecificProductPage};
+
+// <label> Պանիր </label>

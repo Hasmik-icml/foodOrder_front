@@ -150,16 +150,15 @@ nav {
     position: absolute;
     width: 180px;
     height: 300px;
-    margin: -100px 0 0 -170px;
+    /* margin-right: auto; */
+    margin: -96px 0 0 -177px;
     padding: 125px 30px 30px;
     border-radius: 20px;
-    background-image: url("../img/blackFon.jpg");
+    background-image: url(../img/blackFon.jpg);
     border: 2px solid #8eb14d;
     list-style-type: none;
-
-    transform-origin:0;
-    transform: translateY(-100%);
-
+    transform-origin: top;
+    transform: translateY(-130%);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 

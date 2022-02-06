@@ -27,9 +27,9 @@ router.addRoute("/products", function () {
 
 });
 
-router.addRoute("/products/:params", function () {
+router.addRoute("/products/:params", function (events) {
     renderBurgerPage();
-    renderDetailedPage();
+    renderDetailedPage(events.params.params);
 });
 
 router.addRoute("/products/:params/:items", function () {

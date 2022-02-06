@@ -101,7 +101,6 @@ export default class Router {
         );
 
         this.context.location.hash = path;
-        debugger;
         console.log(this);
         return this;
     }

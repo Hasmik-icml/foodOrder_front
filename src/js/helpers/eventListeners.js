@@ -36,7 +36,7 @@ export const registerEventListeners = () => {
 export const productsEventListeners = () => {
   document.querySelectorAll(".grid-item").forEach(item =>
     item.addEventListener("click", function () {
-      console.log(this.id);
+      console.log("Պրոդուկտի դիս >>>>>>>>>>>>", this.className);
       router.redirect(`/products/${this.id}`);
     })
   )
@@ -57,6 +57,7 @@ export const cancelOrder = () => {
   addEventListener("click", () => {
     if (confirm("Չեղարկե՞լ պատվերը")) {
       document.getElementById("basketCounter").innerHTML = 0;
+      router.redirect("/");
     }
   })
 }
@@ -86,7 +87,7 @@ export const fiterSearchListener = () => {
     for (let i = 0; i < li.length; i++) {
       txtValue = li[i].innerText;
       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        renderDetailedPage(txtValue);
+     
         li[i].style.display = "";
         
       } else {
