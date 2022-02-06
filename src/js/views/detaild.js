@@ -33,25 +33,25 @@ const renderDetailedPage = (productType) => {
         <!-- end filter window -->
 </div></div>`
 
-//ֆիլտրի մեջ հարցումի սկիզբ
-fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
-.then(function(response){
-  return response.json();
-})
-.then(function(data){
-   console.log("result-----", data);
-  let result = data.map(function(params, index){
-    console.log("result-----", params);
-    return `<li>${params.name}</li>`
-          
-  })
-   document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
-})
-//ֆիլտրի մեջ հարցումի վերջ
+  //ֆիլտրի մեջ հարցումի սկիզբ
+  fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log("result-----", data);
+      let result = data.map(function (params, index) {
+        console.log("result-----", params);
+        return `<li>${params.name}</li>`
 
-/*****************/
+      })
+      document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
+    })
+  //ֆիլտրի մեջ հարցումի վերջ
 
-//առանձին պրոդուկտների տվյալների հարցումի սկիզբ
+  /*****************/
+
+  //առանձին պրոդուկտների տվյալների հարցումի սկիզբ
   fetch(`${CONSTANTS.HOST}/productType?url=get-all`)
 
     .then(function (response) {
@@ -60,14 +60,14 @@ fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
     .then(function (data) {
       {
         // data = [{}{}{}]  ->>>>>>>>> [{id=2, name=juice}]
-        let res = data.filter(function (params) {//{id=2,name=xort}
+        let res = data.filter(function (params) { //{id=2,name=xort}
           return params.name == productType; // xortic==jucie
         })
         show(res);
       }
     })
 
-  function show(product_type_id) {//[id=2,name-juice]
+  function show(product_type_id) { //[id=2,name-juice]
 
     fetch(`${CONSTANTS.HOST}/product?url=get-all-by-product-type&product_type_id=${product_type_id[0].id}`)
       .then(function (response) {
@@ -109,7 +109,7 @@ fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
         cancelOrder();
       });
   }
-//առանձին պրոդուկտների տվյալների հարցումի վերջ
+  //առանձին պրոդուկտների տվյալների հարցումի վերջ
 
 
 
