@@ -1,4 +1,4 @@
-import {BackEventListener, cancelOrder} from "../helpers/eventListeners";
+import {BackEventListener, burgerPageEventListener, cancelOrder} from "../helpers/eventListeners";
 
 const renderBasketPage = () => {
     document.querySelector(".container").innerHTML =
@@ -48,8 +48,8 @@ const renderBasketPage = () => {
   <div class="total"><label>Ընդհանուր:</label> <label>2100դր</label></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
-    BackEventListener()
-    cancelOrder();
+    BackEventListener();
+    burgerPageEventListener();
 };
 
 export {renderBasketPage};

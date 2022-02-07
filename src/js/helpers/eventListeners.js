@@ -59,19 +59,7 @@ export const specificProductEventListener = () => {
   ))
 }
 
-export const cancelOrder = () => {
-  document.getElementById("cancel").
-  addEventListener("click", () => {
-    if (confirm("Չեղարկե՞լ պատվերը")) {
-      document.getElementById("basketCounter").innerHTML = 0;
-      router.redirect("/");
-    }
-  })
-}
-
-
-
-export const basketPageEventListener = () => {
+export const burgerPageEventListener = () => {
   let hash = window.location.hash;
   document.getElementById("homeIcon").addEventListener("click", function () {
     router.redirect(`/products`);
@@ -79,12 +67,18 @@ export const basketPageEventListener = () => {
   document.getElementById("shoppingIcon").addEventListener("click", function () {
     router.redirect(`/basket`);
   });
-}
-export const pageBackEventListener = () => {
+  document.getElementById("cancel").
+  addEventListener("click", () => {
+    if (confirm("Չեղարկե՞լ պատվերը")) {
+      document.getElementById("basketCounter").innerHTML = 0;
+      router.redirect("/");
+    }
+  });
   document.querySelector(".navArrow").addEventListener("click", function () {
     window.history.back();
-  })
+  });
 }
+
 export const BackEventListener = () => {
   document.querySelector(".arrow").addEventListener("click", function () {
     window.history.back();
@@ -117,7 +111,7 @@ function render() {
       })
       console.log("searchText", searchText);
       document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
-      setCookie("filter", searchText);
+     // setCookie("filter", searchText);
     })
 }
 

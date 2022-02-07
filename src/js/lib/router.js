@@ -25,7 +25,7 @@ export default class Router {
 
         context.removeEventListener("hashchange", this.changeHandler);
         context.addEventListener("hashchange", this.changeHandler);
-        // context.addEventListener("load", this.changeHandler);
+
     }
 
     async changeHandler() {

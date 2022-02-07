@@ -1,10 +1,9 @@
 import {
-  basketPageEventListener,
-  cancelOrder,
-  pageBackEventListener,
+  burgerPageEventListener,
   productsEventListeners
 } from "../helpers/eventListeners";
 import CONSTANTS from "../helpers/constants";
+import {getCookie} from "../helpers/storage";
 
 const renderProductsPage = () => {
   document.querySelector(".container").innerHTML += ` <div class="containerProducts" >
@@ -26,14 +25,12 @@ const renderProductsPage = () => {
       document.querySelector(".grid-container")
         .insertAdjacentHTML("beforeend", type);
 
-      basketPageEventListener();
-      cancelOrder();
-      pageBackEventListener();
+      burgerPageEventListener();
       productsEventListeners(data);
 
     })
 
-
+  console.log(getCookie("table"));
 }
 
 export {

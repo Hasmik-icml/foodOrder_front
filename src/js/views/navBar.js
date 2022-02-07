@@ -1,5 +1,5 @@
 import {
-    basketPageEventListener,
+    burgerPageEventListener,
     cancelOrder,
     pageBackEventListener,
     productsEventListeners
@@ -29,9 +29,8 @@ const renderBurgerPage = () => {
  </nav>`
 
     productsEventListeners();
-    basketPageEventListener();
-    cancelOrder();
-    pageBackEventListener();
+    burgerPageEventListener();
+
 
 }
 export {renderBurgerPage};

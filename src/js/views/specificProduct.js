@@ -1,5 +1,5 @@
 
-import {basketPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
+import {burgerPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
 import  CONSTANTS from "../helpers/constants";
 
 const renderSpecificProductPage = () => {
@@ -87,9 +87,7 @@ const renderSpecificProductPage = () => {
             document.getElementById("basketCounter").innerHTML ++;
         });
 
-        basketPageEventListener();
-        cancelOrder();
-        pageBackEventListener();
+        burgerPageEventListener();
 
     });
 
