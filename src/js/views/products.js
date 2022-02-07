@@ -17,7 +17,7 @@ const renderProductsPage = () => {
         </div>`
 
 
-  fetch(`${CONSTANTS.HOST}/productType?url=get-all`)
+  fetch(`${CONSTANTS.HOST}/product-type?url=get-all`)
     .then(function (response) {
       return response.json()
     }).then(function (data) {

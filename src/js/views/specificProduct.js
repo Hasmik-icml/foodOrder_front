@@ -1,6 +1,7 @@
 
 import {burgerPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
 import  CONSTANTS from "../helpers/constants";
+import {State} from "../model";
 
 const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML += ` <div id="mainContainer">
@@ -79,8 +80,23 @@ const renderSpecificProductPage = () => {
         });
 
         document.getElementById("addToBasket").addEventListener("click", ()=>{
-            document.getElementById("basketCounter").innerHTML ++;
+            console.log(data);
+            let orderObj = {
+                id : data[0].id,
+                name : data[0].name,
+                img : data[0].imagePath,
+                price : data[0].price,
+                amount : quantity.value,
+                totalPrice : totalPrice.value
+            }
+            State.basket.push(orderObj);
+
+            console.log(State.basket);
+
+            document.getElementById("basketCounter").innerHTML = State.basket.length;
         });
+
+
         burgerPageEventListener();
     });
 };

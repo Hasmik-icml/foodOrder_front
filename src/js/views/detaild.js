@@ -53,7 +53,7 @@ const renderDetailedPage = (productType) => {
   //առանձին պրոդուկտների տվյալների հարցումի սկիզբ
 
         let res = State.productTypes.filter(function (params) { //{id=2,name=xort}
-          return params.name == productType; // xortic==jucie
+          return params.name === productType; // xortic==jucie
         })
         show(res);
 
@@ -64,7 +64,8 @@ const renderDetailedPage = (productType) => {
         return response.json();
       })
       .then(function (data) {
-        console.log("jusi data >>>>>", product_type_id[0].id);
+        State.product = data;
+        console.log( State.product);
         let result = data.map(function (params, index, data) {
           // let ingredientsCount = Object.values(params.ingredients).length;
           // console.log("dataindex--", Object.values(params.ingredients).length);

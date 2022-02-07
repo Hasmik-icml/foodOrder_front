@@ -42,10 +42,11 @@ export const productsEventListeners = () => {
 
   document.querySelectorAll(".grid-item").forEach(item =>
     item.addEventListener("click", function () {
-
-      console.log(this);
-      console.log(State.productTypes);
+      //console.log(this);
+      //console.log(State.productTypes);
       let data =  this.getAttribute("data-product-type");
+      console.log(this);
+      console.log(data);
       router.redirect(`/products/${data}`);
     })
   )
@@ -53,11 +54,13 @@ export const productsEventListeners = () => {
 
 
 
-export const specificProductEventListener = () => {
+export const specificProductEventListener = (id) => {
   document.querySelectorAll(".product")
       .forEach(item => item.addEventListener("click",
     function () {
       let hash = window.location.hash;
+      console.log(State.product);
+      console.log(this);
       router.redirect(`${hash}/${this.id}`);
     }
   ))
