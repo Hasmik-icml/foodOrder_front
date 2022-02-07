@@ -21,8 +21,9 @@ import {
 } from "../views/navBar";
 
 import CONSTANTS from "../helpers/constants";
+import {State} from "../model";
 
-let productTypes = [];
+//let productTypes = [];
 
 export const registerEventListeners = () => {
   let select = document.getElementById('selectTable')
@@ -31,18 +32,21 @@ export const registerEventListeners = () => {
       .addEventListener("click", function () {
         setCookie("table", select.value);
         getCookie("table");
+        console.log(getCookie("table"));
         router.redirect('/products');
       })
   })
 }
 
-export const productsEventListeners = (data) => {
-  productTypes = data;
+export const productsEventListeners = () => {
+
   document.querySelectorAll(".grid-item").forEach(item =>
     item.addEventListener("click", function () {
-      console.log("Պրոդուկտի դիս >>>>>>>>>>>>", this.className);
-      console.log("data", this.getAttribute("data-product-type"));
-      router.redirect(`/products/${this.getAttribute("data-product-type")}`);
+
+      console.log(this);
+      console.log(State.productTypes);
+      let data =  this.getAttribute("data-product-type");
+      router.redirect(`/products/${data}`);
     })
   )
 }

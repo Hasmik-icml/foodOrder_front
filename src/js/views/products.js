@@ -4,6 +4,9 @@ import {
 } from "../helpers/eventListeners";
 import CONSTANTS from "../helpers/constants";
 import {getCookie} from "../helpers/storage";
+import {State} from "../model";
+
+console.log(State);
 
 const renderProductsPage = () => {
   document.querySelector(".container").innerHTML += ` <div class="containerProducts" >
@@ -18,6 +21,7 @@ const renderProductsPage = () => {
     .then(function (response) {
       return response.json()
     }).then(function (data) {
+      State.productTypes = data;
       let type = data.reduce((acc, current) => {
         return acc += `<div id="${current.id}" class="grid-item" data-product-type="${current.name}">${current.name}</div> `
       }, "");

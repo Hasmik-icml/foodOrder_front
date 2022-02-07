@@ -43,8 +43,10 @@ import {
 import {getCookie} from "./js/helpers/storage.js";
 
 import router from "./js/routing";
+import {State} from "./js/model";
 import {renderBurgerPage} from "./js/views/navBar";
 
+console.log(State);
 let hash = window.location.hash;
 console.log( getCookie("filter"));
 //if(getCookie("table") !== ""){

@@ -4,14 +4,9 @@ import  CONSTANTS from "../helpers/constants";
 
 const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML += ` <div id="mainContainer">
-    
-    <div class="gridContainer">
-      
-       
-
+         <div class="gridContainer">
          </div>
-    </div>
-    `;
+    </div>`;
 
     let productId = window.location.hash.split("/").pop();
     console.log(productId);
@@ -86,12 +81,8 @@ const renderSpecificProductPage = () => {
         document.getElementById("addToBasket").addEventListener("click", ()=>{
             document.getElementById("basketCounter").innerHTML ++;
         });
-
         burgerPageEventListener();
-
     });
-
-
 };
 
 export {renderSpecificProductPage};

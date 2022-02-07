@@ -4,6 +4,7 @@ import {
   specificProductEventListener,
   fiterSearchListener
 } from "../helpers/eventListeners";
+import {State} from "../model";
 
 const renderDetailedPage = (productType) => {
 
@@ -50,20 +51,11 @@ const renderDetailedPage = (productType) => {
   /*****************/
 
   //առանձին պրոդուկտների տվյալների հարցումի սկիզբ
-  fetch(`${CONSTANTS.HOST}/productType?url=get-all`)
 
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      {
-        // data = [{}{}{}]  ->>>>>>>>> [{id=2, name=juice}]
-        let res = data.filter(function (params) { //{id=2,name=xort}
+        let res = State.productTypes.filter(function (params) { //{id=2,name=xort}
           return params.name == productType; // xortic==jucie
         })
         show(res);
-      }
-    })
 
   function show(product_type_id) { //[id=2,name-juice]
 
