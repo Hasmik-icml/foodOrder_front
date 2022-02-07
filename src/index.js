@@ -46,7 +46,7 @@ import router from "./js/routing";
 import {renderBurgerPage} from "./js/views/navBar";
 
 let hash = window.location.hash;
-
+console.log( getCookie("filter"));
 //if(getCookie("table") !== ""){
 
 let hashString = (hash.indexOf("#") >= 0) &&

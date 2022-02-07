@@ -1,3 +1,4 @@
+import {getCookie} from "../helpers/storage";
 import CONSTANTS from "../helpers/constants";
 import {
   basketPageEventListener,
@@ -8,7 +9,9 @@ import {
 } from "../helpers/eventListeners";
 
 const renderDetailedPage = (productType) => {
-
+//   debugger;
+let filter = getCookie("filter");
+console.log("filter", getCookie("filter"));
   document.querySelector(".container").innerHTML += `
   <div class="containerMainDetaild">
     <div class="containerDetaild">
@@ -34,19 +37,19 @@ const renderDetailedPage = (productType) => {
 </div></div>`
 
   //ֆիլտրի մեջ հարցումի սկիզբ
-  fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log("result-----", data);
-      let result = data.map(function (params, index) {
-        console.log("result-----", params);
-        return `<li>${params.name}</li>`
+  // fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (data) {
+  //     console.log("result-----", data);
+  //     let result = data.map(function (params, index) {
+  //       console.log("result-----", params);
+  //       return `<li>${params.name}</li>`
 
-      })
-      document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
-    })
+  //     })
+  //     document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
+  //   })
   //ֆիլտրի մեջ հարցումի վերջ
 
   /*****************/
@@ -74,11 +77,12 @@ const renderDetailedPage = (productType) => {
         return response.json();
       })
       .then(function (data) {
-        console.log("jusi data >>>>>", product_type_id[0].id);
+      
+      
         let result = data.map(function (params, index, data) {
           // let ingredientsCount = Object.values(params.ingredients).length;
           // console.log("dataindex--", Object.values(params.ingredients).length);
-          console.log("**************************", params.ingredients);
+     
           if (!params.ingredients) {
             document.querySelector(".ingredientsList").classList.add("hidden");
           }

@@ -20,6 +20,9 @@ import {
   renderBurgerPage
 } from "../views/navBar";
 
+import CONSTANTS from "../helpers/constants";
+
+let productTypes = [];
 
 export const registerEventListeners = () => {
   let select = document.getElementById('selectTable')
@@ -33,11 +36,13 @@ export const registerEventListeners = () => {
   })
 }
 
-export const productsEventListeners = () => {
+export const productsEventListeners = (data) => {
+  productTypes = data;
   document.querySelectorAll(".grid-item").forEach(item =>
     item.addEventListener("click", function () {
       console.log("Պրոդուկտի դիս >>>>>>>>>>>>", this.className);
-      router.redirect(`/products/${this.id}`);
+      console.log("data", this.getAttribute("data-product-type"));
+      router.redirect(`/products/${this.getAttribute("data-product-type")}`);
     })
   )
 }
@@ -80,19 +85,35 @@ export const BackEventListener = () => {
 }
 
 export const fiterSearchListener = () => {
-  document.querySelector("#searchInput").addEventListener("keyup", function () {
-    let filter = document.querySelector("#searchInput").value.toUpperCase();
-    let li = document.querySelector(".filterItem").getElementsByTagName("li");
-    let txtValue;
-    for (let i = 0; i < li.length; i++) {
-      txtValue = li[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-     
-        li[i].style.display = "";
-        
-      } else {
-        li[i].style.display = "none";
-      }
-    }
-  })
+
+let searchText = "";
+
+document.querySelector("#searchInput").addEventListener("keyup", function (e ) {
+  searchText = e.target.value;
+  render();
+})
+
+let li = document.querySelector(".filterItem");
+function render() {
+  li.innerHTML = "";
+  fetch(`${CONSTANTS.HOST}/ingredient?url=get-all`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      let result = data.filter(function (params, index) {
+       return  params.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+        // console.log("result-----", params);
+        // return `<li>${params.name}</li>`
+      }).map(function(params){
+        return `<li>${params.name}</li>`
+      })
+      console.log("searchText", searchText);
+      document.querySelector(".filterItem").insertAdjacentHTML("beforeend", result.join(""));
+      setCookie("filter", searchText);
+    })
+}
+
+
+render();
 }

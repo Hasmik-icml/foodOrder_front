@@ -9,9 +9,12 @@ export const setCookie = (name, value, expDate = 30) => {
 
 export const getCookie = (name) =>{
   // console.log(document.cookie);
+ console.log(document.cookie);
   if (document.cookie.indexOf(";") >= 0){
   return document.cookie.split(";").map(item => { 
+    
     if (item.split("=")[0] === name) { 
+      console.log("item.split", item.split("="));
       return item.split("="); 
     }
    })[1]; 

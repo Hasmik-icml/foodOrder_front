@@ -20,7 +20,7 @@ const renderProductsPage = () => {
       return response.json()
     }).then(function (data) {
       let type = data.reduce((acc, current) => {
-        return acc += `<div id="${current.name}" class="grid-item">${current.name}</div> `
+        return acc += `<div id="${current.id}" class="grid-item" data-product-type="${current.name}">${current.name}</div> `
       }, "");
 
       document.querySelector(".grid-container")
@@ -29,7 +29,7 @@ const renderProductsPage = () => {
       basketPageEventListener();
       cancelOrder();
       pageBackEventListener();
-      productsEventListeners();
+      productsEventListeners(data);
 
     })
 
