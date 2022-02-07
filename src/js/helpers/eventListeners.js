@@ -50,13 +50,15 @@ export const productsEventListeners = (data) => {
 
 
 export const specificProductEventListener = () => {
-  document.querySelectorAll(".product").forEach(item => item.addEventListener("click",
+  document.querySelectorAll(".product")
+      .forEach(item => item.addEventListener("click",
     function () {
       let hash = window.location.hash;
       router.redirect(`${hash}/${this.id}`);
     }
   ))
 }
+
 export const cancelOrder = () => {
   document.getElementById("cancel").
   addEventListener("click", () => {
@@ -67,11 +69,16 @@ export const cancelOrder = () => {
   })
 }
 
+
+
 export const basketPageEventListener = () => {
   let hash = window.location.hash;
+  document.getElementById("homeIcon").addEventListener("click", function () {
+    router.redirect(`/products`);
+  });
   document.getElementById("shoppingIcon").addEventListener("click", function () {
     router.redirect(`/basket`);
-  })
+  });
 }
 export const pageBackEventListener = () => {
   document.querySelector(".navArrow").addEventListener("click", function () {
