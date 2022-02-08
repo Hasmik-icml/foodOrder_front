@@ -32,7 +32,6 @@ export const registerEventListeners = () => {
       .addEventListener("click", function () {
         setCookie("table", select.value);
         getCookie("table");
-        console.log(getCookie("table"));
         router.redirect('/products');
       })
   })

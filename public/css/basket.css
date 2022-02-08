@@ -52,7 +52,7 @@ html, body {
     font-family: cursive;
 }
 
- .confirmBtn {
+ #confirmBtn {
     cursor: pointer;
     margin: auto;
     width: 180px;

@@ -2,6 +2,7 @@ import {BackEventListener, burgerPageEventListener} from "../helpers/eventListen
 import {State} from "../model";
 import {logPlugin} from "@babel/preset-env/lib/debug";
 import router from "../routing";
+import {setCookie} from "../helpers/storage";
 
 const renderBasketPage = () => {
     let sum;
@@ -19,7 +20,7 @@ const renderBasketPage = () => {
     document.querySelector(".container").innerHTML +=
         `<div class="containerBasket"> 
   <div class="total"><label>Ընդհանուր:</label> <span> ${sum} </span></div>
-  <button class="confirmBtn">Հաստատել</button></div>`;
+  <button id="confirmBtn">Հաստատել</button></div>`;
 
         let orders =  State.basket.reduce((acc,current) => {
         return acc += `<div class="card" id = ${current.id}>
@@ -68,6 +69,12 @@ const renderBasketPage = () => {
     ));
     console.log("deletet basket ", State.basket);
 
+    document.getElementById("confirmBtn").addEventListener("click", () => {
+         alert("Ձեր պատվերը ընդունված է");
+        State.basket.length = 0;
+        setCookie("table", 0,  0);
+        router.redirect("/");
+    })
 
     burgerPageEventListener();
 };
