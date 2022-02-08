@@ -7,10 +7,12 @@ html, body {
 .containerBasket {
     height: 100vh;
     background-image: url(../img/ej6.jpg);
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-size: cover ;
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
 }
 
  .arrow {
@@ -23,8 +25,9 @@ html, body {
 }
 
 .card {
+    width:95%;
     height: 65px;
-    margin: 35px; 
+    margin-top: 11vh;
     display: flex;
     justify-content: space-around;
     font-size: 25px;
@@ -61,14 +64,13 @@ html, body {
 }
 
 .total {
+    margin: auto;
     width: 250px;
     height: 30px;
     font-size: 25px;
-    margin-left: 900px;
     padding: 10px;
     border-radius: 10px;
     float: right;
-    margin-right: 220px;
     color: white;
     background-color: rgba(88, 91, 97, 0.5);
 }

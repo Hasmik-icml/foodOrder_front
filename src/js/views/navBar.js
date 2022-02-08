@@ -1,7 +1,5 @@
 import {
     burgerPageEventListener,
-    cancelOrder,
-    pageBackEventListener,
     productsEventListeners
 } from "../helpers/eventListeners";
 

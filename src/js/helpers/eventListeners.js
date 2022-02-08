@@ -78,6 +78,7 @@ export const burgerPageEventListener = () => {
   addEventListener("click", () => {
     if (confirm("Չեղարկե՞լ պատվերը")) {
       State.basket.length =0;
+        setCookie("table", 0,  0);
       router.redirect("/");
     }
   });

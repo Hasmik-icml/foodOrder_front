@@ -21,8 +21,6 @@ const renderBasketPage = () => {
   <div class="total"><label>Ընդհանուր:</label> <span> ${sum} </span></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
-    console.log(State.basket);
-
         let orders =  State.basket.reduce((acc,current) => {
         return acc += `<div class="card" id = ${current.id}>
             <div><img class = "basketImg" src=${current.img} "/></div>
@@ -68,8 +66,7 @@ const renderBasketPage = () => {
            let changedSum = Number(document.querySelector(".total span").textContent);
             changedSum -= found.totalPrice;
             document.querySelector(".total span").textContent = changedSum;
-
-
+            document.getElementById("basketCounter").innerHTML--;
 
         }
     ));
