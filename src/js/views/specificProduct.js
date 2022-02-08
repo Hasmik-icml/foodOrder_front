@@ -86,9 +86,9 @@ const renderSpecificProductPage = () => {
                 id : data[0].id,
                 name : data[0].name,
                 img : data[0].imagePath,
-                price : +data[0].price,
-                amount : +quantity.value,
-                totalPrice : totalPrice.value
+                price : Number(data[0].price),
+                amount : Number(quantity.value),
+                totalPrice : Number(totalPrice.value)
             }
             console.log("orderobj =  " ,orderObj);
 
@@ -97,11 +97,10 @@ const renderSpecificProductPage = () => {
             console.log("basket",basket);
 
 
-
           let found = basket.find(element => element.id == orderObj.id); //find
            if(found) {
-               found.amount += +orderObj.amount;
-               found.totalPrice = Number(+orderObj.totalPrice + +found.totalPrice);
+               found.amount += Number(orderObj.amount);
+               found.totalPrice = Number(orderObj.totalPrice + found.totalPrice);
            }
            else {
                basket.push(orderObj);
@@ -122,7 +121,7 @@ const renderSpecificProductPage = () => {
             console.log("basket pushed",basket);
 
             document.getElementById("basketCounter").innerHTML = State.basket.length;
-            return State.basket;
+
         });
 
 

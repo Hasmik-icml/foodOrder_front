@@ -16,7 +16,7 @@ router.addRoute("/", function () {
 
 //router.redirect('/');
 router.addRoute("/basket", function () {
-    // renderBurgerPage();
+    renderBurgerPage();
     renderBasketPage();
 });
 

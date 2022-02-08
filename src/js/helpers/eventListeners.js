@@ -77,7 +77,7 @@ export const burgerPageEventListener = () => {
   document.getElementById("cancel").
   addEventListener("click", () => {
     if (confirm("Չեղարկե՞լ պատվերը")) {
-      document.getElementById("basketCounter").innerHTML = 0;
+      State.basket.length =0;
       router.redirect("/");
     }
   });

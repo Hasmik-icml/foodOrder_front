@@ -75,7 +75,7 @@ const renderDetailedPage = (productType) => {
           }
           return `<div id="${params.id}" class="product">
           <div class="productImg">
-            <img src="${params.imagePath}" alt="cheesePizza">
+            <img src="${params.imagePath}" alt="${params.name}">
           </div>
           <div class="productName">
             <h2 class="detailedProductName">${params.name}</h2>
