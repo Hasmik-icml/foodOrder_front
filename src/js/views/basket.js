@@ -45,17 +45,13 @@ const renderBasketPage = () => {
 
     document.querySelectorAll(".deleteProduct").forEach(item =>
         item.addEventListener("click", (event) => {
+
             console.log( "id ", event.target.id);
            let forDelete = event.target.parentElement.parentElement;
-           // console.log( "sumic piti haninq ", forDelete.getElementsByClassName("totalPricetoDelete"));
-           // console.log(forDelete);
-           // console.log(forDelete.getAttribute("id"));
-            let found = State.basket.find(item => item.id == event.target.id);
 
-            State.basket = State.basket.filter( item => {
-              return  item.id != event.target.id;
-                }
-            )
+           let found = State.basket.find(item => item.id == event.target.id);
+
+            State.basket = State.basket.filter( item => item.id != event.target.id);
 
 
             let node = forDelete;
@@ -72,7 +68,7 @@ const renderBasketPage = () => {
     ));
     console.log("deletet basket ", State.basket);
 
-    //BackEventListener();
+
     burgerPageEventListener();
 };
 
