@@ -1,18 +1,24 @@
 import {BackEventListener, burgerPageEventListener} from "../helpers/eventListeners";
 import {State} from "../model";
+
 const renderBasketPage = () => {
-    let sum = State.basket.reduce((a,b) => +a.totalPrice + +b.totalPrice);
+    let sum=0;
+    if (State.basket.length > 1){
+    sum = State.basket.reduce((a,b) => a.totalPrice + b.totalPrice)}
+    else {
+        sum = State.basket[0].totalPrice;
+    }
+
+    console.log("totalprice",sum);
     document.querySelector(".container").innerHTML =
         `<div class="containerBasket"> <i class="arrow">🡄</i>
-  
-  
   <div class="total"><label>Ընդհանուր:</label> <label> ${sum} դր</label></div>
   <button class="confirmBtn">Հաստատել</button></div>`;
 
     console.log(State.basket);
 
         let orders =  State.basket.reduce((acc,current) => {
-        return acc += `<div class="card">
+        return acc += `<div class="card" id = ${current.id}>
             <div><img src=${current.img} width="70px" height="60px"/></div>
             <div><h5>${current.name}</h5></div>
             <div><label>Գին։</label> <label id=currentPrice>${current.price}</label></div>
@@ -22,19 +28,31 @@ const renderBasketPage = () => {
                 <label>${current.amount}</label>
                 <label class="plus">+</label>
             </div>
-            <div><label>Արժեք</label> <label>${current.totalPrice}</label></div>
-            <div><h5 id="deleteProduct">X</h5></div>
+            <div><label>Արժեք</label> <label>${current.amount*current.price}</label></div>
+            <div><h5 class="deleteProduct">X</h5></div>
         </div>`
 
     }, "");
 
-    console.log(orders);
-    // document.getElementById("deleteProduct").addEventListener("click", () =>
-    //         State.basket.filter( item = > item.id != )
-    // )
+
 
     document.querySelector(".containerBasket")
         .insertAdjacentHTML("afterbegin", orders);
+    document.querySelectorAll(".deleteProduct").forEach(item =>
+        item.addEventListener("click", (event) => {
+           let forDelete = event.target.parentElement.parentElement;
+            console.log(forDelete);
+            console.log(forDelete.getAttribute("id"));
+            let newBasket = State.basket.filter( item => {
+                console.log(item.id);
+                return (item.id != forDelete.getAttribute("id"))
+
+            })
+            console.log(newBasket);
+            console.log(State.basket);
+
+        }
+    ));
 
     BackEventListener();
     burgerPageEventListener();

@@ -2,6 +2,7 @@
 import {burgerPageEventListener, cancelOrder, pageBackEventListener} from "../helpers/eventListeners";
 import  CONSTANTS from "../helpers/constants";
 import {State} from "../model";
+import {logPlugin} from "@babel/preset-env/lib/debug";
 
 const renderSpecificProductPage = () => {
     document.querySelector(".container").innerHTML += ` <div id="mainContainer">
@@ -75,25 +76,53 @@ const renderSpecificProductPage = () => {
         document.getElementById("subtract").addEventListener("click", ()=>{
             if(quantity.value>0)
             {quantity.value--;
-                totalPrice.value = initialPrice * quantity.value;
+                totalPrice.value = +(initialPrice * quantity.value);
             }
         });
 
         document.getElementById("addToBasket").addEventListener("click", ()=>{
-            console.log(data);
+
             let orderObj = {
                 id : data[0].id,
                 name : data[0].name,
                 img : data[0].imagePath,
-                price : data[0].price,
-                amount : quantity.value,
+                price : +data[0].price,
+                amount : +quantity.value,
                 totalPrice : totalPrice.value
             }
-            State.basket.push(orderObj);
+            console.log("orderobj =  " ,orderObj);
 
-            console.log(State.basket);
+            let basket = State.basket;
+
+            console.log("basket",basket);
+
+
+
+          let found = basket.find(element => element.id == orderObj.id); //find
+           if(found) {
+               found.amount += +orderObj.amount;
+               found.totalPrice = Number(+orderObj.totalPrice + +found.totalPrice);
+           }
+           else {
+               basket.push(orderObj);
+           }
+
+            //if(orderObj.id == basket.some(item => item.id == )
+           // basket = basket.map(item => {
+           //     console.log("basket");
+           //     // (item.id == orderObj.id) {
+           //     //  item.amount += orderObj.amount;
+           //     //  item.price += orderObj.price;
+           //     //  return item;
+           //
+           //  });
+
+
+
+            console.log("basket pushed",basket);
 
             document.getElementById("basketCounter").innerHTML = State.basket.length;
+            return State.basket;
         });
 
 
