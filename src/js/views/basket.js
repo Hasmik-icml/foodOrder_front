@@ -1,4 +1,4 @@
-import {BackEventListener, burgerPageEventListener, cancelOrder} from "../helpers/eventListeners";
+import {BackEventListener, burgerPageEventListener} from "../helpers/eventListeners";
 import {State} from "../model";
 const renderBasketPage = () => {
     let sum = State.basket.reduce((a,b) => +a.totalPrice + +b.totalPrice);
@@ -23,12 +23,15 @@ const renderBasketPage = () => {
                 <label class="plus">+</label>
             </div>
             <div><label>Արժեք</label> <label>${current.totalPrice}</label></div>
-            <div><h5 class="deleteProduct">X</h5></div>
+            <div><h5 id="deleteProduct">X</h5></div>
         </div>`
 
     }, "");
 
     console.log(orders);
+    // document.getElementById("deleteProduct").addEventListener("click", () =>
+    //         State.basket.filter( item = > item.id != )
+    // )
 
     document.querySelector(".containerBasket")
         .insertAdjacentHTML("afterbegin", orders);

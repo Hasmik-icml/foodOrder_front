@@ -6,6 +6,7 @@ import {
 } from "../helpers/eventListeners";
 
 import {getCookie} from "../helpers/storage";
+import {State} from "../model";
 
 const renderBurgerPage = () => {
     document.querySelector(".container").innerHTML =
@@ -21,7 +22,7 @@ const renderBurgerPage = () => {
            <li id="home"> <img id="homeIcon" src="./img/homeicon.png" alt="image"> </li>
             <li id="tableNumber"> Սեղան <span class="tableNum">${getCookie("table")}</span></li>
             <li><a id="basket"> <img id="shoppingIcon" src="./img/shopping-cart-icon.png" alt="image">
-                <span id="basketCounter">0</span></a>
+                <span id="basketCounter">${State.basket.length}</span></a>
             </li>
             <li id="cancel">Չեղարկել</li>
         </ul>
