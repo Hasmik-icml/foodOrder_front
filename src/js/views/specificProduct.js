@@ -43,12 +43,12 @@ const renderSpecificProductPage = () => {
                 <div class="quantityOfProduct"> 
                 <label>Կտոր</label>
                  <button id="subtract">-</button>
-                <input type="text" id="quantity" value="0" name="quantity">
+                <input type="text" id="quantity" value="1" name="quantity">
                 <button id="add">+</button> 
                  </div>
                  <div class="totalPriceDiv">
                   <label>Ընդհանուր գին</label>
-                <input type="text" id="totalPrice" value="0" name="quantity">
+                <input type="text" id="totalPrice" value="${current.price}" name="quantity">
                 </div>
                
             </div>
